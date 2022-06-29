@@ -4,8 +4,10 @@ const navBtnOpen = document.getElementById("nav-burger"); // кнопка бюр
 const mainContentArea = document.getElementById("scrollview"); // главное окно с контентом
 const navMenuList = document.getElementById("navigation"); // выезжающая навигация по сайту
 const returnMainArea = document.getElementById("open-scroll");
+const mainNav = document.getElementById("main-nav");
 
 navBtnOpen.addEventListener("click", function () {
+  mainNav.classList.add("nav--menu-open");
   mainContentArea.classList.add("scroll-view--menu-open");
   navMenuList.classList.add("menu--menu-open");
   document.querySelector("html").classList.remove("has-scroll-scrolling"); // удаляем класс со стилями скролла locomotive
@@ -15,6 +17,7 @@ navBtnOpen.addEventListener("click", function () {
 });
 
 returnMainArea.addEventListener("click", function () {
+  mainNav.classList.remove("nav--menu-open");
   mainContentArea.classList.remove("scroll-view--menu-open");
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
