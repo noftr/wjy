@@ -14,7 +14,7 @@ navBtnOpen.addEventListener("click", function () {
   mainContentArea.style.overflow = "hidden";
   returnMainArea.classList.add("open-scroll--menu-open");
   $(".section-tag").css("right", "0em");
-  $(".wrapper").css("width", "100%");
+  $(".wrapper").css("max-width", "100%");
   show();
 });
 
@@ -24,7 +24,7 @@ returnMainArea.addEventListener("click", function () {
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
   $(".section-tag").css("right", "6.94em");
-  $(".wrapper").css("width", "calc(100%-6.94em)");
+  $(".wrapper").css("max-width", "calc(100%-6.94em)");
   setTimeout(showHide, 500);
 });
 
