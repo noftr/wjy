@@ -23,8 +23,8 @@ returnMainArea.addEventListener("click", function () {
   mainContentArea.classList.remove("scroll-view--menu-open");
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
-  $(".section-tag").css("right", "6.94em"); // jquery меняю стиль всем элементам
-  $(".wrapper").css("max-width", "calc(100% - 6.94em)"); // jquery меняю стиль всем элементам
+  // $(".section-tag").css("right", "6.94em"); // jquery меняю стиль всем элементам
+  // $(".wrapper").css("max-width", "calc(100% - 6.94em)"); // jquery меняю стиль всем элементам
   setTimeout(showHide, 500);
 });
 
@@ -33,8 +33,8 @@ menuClose.addEventListener("click", function () {
   mainContentArea.classList.remove("scroll-view--menu-open");
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
-  $(".section-tag").css("right", "6.94em"); // jquery меняю стиль всем элементам
-  $(".wrapper").css("max-width", "calc(100% - 6.94em)"); // jquery меняю стиль всем элементам
+  // $(".section-tag").css("right", "6.94em"); // jquery меняю стиль всем элементам
+  // $(".wrapper").css("max-width", "calc(100% - 6.94em)"); // jquery меняю стиль всем элементам
   setTimeout(showHide, 500);
 });
 
