@@ -5,7 +5,6 @@ const mainContentArea = document.getElementById("scrollview"); // главное
 const navMenuList = document.getElementById("navigation"); // выезжающая навигация по сайту
 const returnMainArea = document.getElementById("open-scroll");
 const mainNav = document.getElementById("main-nav");
-const sectionTag = document.querySelector(".section-tag");
 
 navBtnOpen.addEventListener("click", function () {
   mainNav.classList.add("nav--menu-open");
@@ -14,7 +13,7 @@ navBtnOpen.addEventListener("click", function () {
   document.querySelector("html").classList.remove("has-scroll-scrolling"); // удаляем класс со стилями скролла locomotive
   mainContentArea.style.overflow = "hidden";
   returnMainArea.classList.add("open-scroll--menu-open");
-  sectionTag.classList.add("section-tag--menu-open");
+  $(".section-tag").css("right", "0em");
   show();
 });
 
@@ -23,7 +22,7 @@ returnMainArea.addEventListener("click", function () {
   mainContentArea.classList.remove("scroll-view--menu-open");
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
-  sectionTag.classList.remove("section-tag--menu-open");
+  $(".section-tag").css("right", "6.94em");
   setTimeout(showHide, 500);
 });
 
