@@ -6,7 +6,6 @@ const navMenuList = document.getElementById("navigation"); // выезжающа
 
 navBtnOpen.addEventListener("click", function () {
   mainContentArea.classList.add("scroll-view--menu-open");
-  document.body.classList.add("body-red");
   navMenuList.classList.add("menu--menu-open");
   document.querySelector("html").classList.remove("has-scroll-scrolling"); // удаляем класс со стилями скролла locomotive
   mainContentArea.style.overflow = "hidden";
@@ -16,7 +15,6 @@ navBtnOpen.addEventListener("click", function () {
 navMenuList.addEventListener("click", function () {
   mainContentArea.classList.remove("scroll-view--menu-open");
 
-  document.body.classList.remove("body-red");
   navMenuList.classList.remove("menu--menu-open");
   setTimeout(showHide, 500);
 });
