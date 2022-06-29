@@ -3,7 +3,7 @@ let scene, camera, renderer, controls;
 
 const params = {
   cameraRange: 162.5,
-  cameraFov: 5,
+  cameraFov: 40,
   rotX: 0,
   rotY: 0,
   xrangeBefore: -20,
@@ -11,12 +11,14 @@ const params = {
   yrangeBefore: 3,
   yrangeTo: -3,
   timeLerp: 0.04,
-  metalness: 0,
-  roughness: 1,
+  metalness: 1,
+  roughness: 0.05,
   envMapIntensity: 10,
-  opacity: 0,
+  opacity: 1,
   activateRender: false,
 };
+
+
 
 threejsCanvas = document.querySelector('#threejsCanvas');
 
@@ -157,39 +159,14 @@ const addModelInScene = function(object) {
 };
 
 function render() {
-    if (mouseOnCanvas == false) {
-        if (mouseOutCanvas == false) {
-            TWEEN.removeAll();
-            modelHoverOut = new TWEEN.Tween(params)
-              .to({rotX: 0, rotY: 0, cameraFov: 5, metalness: 0, roughness: 1}, 500)
-              .easing(TWEEN.Easing.Cubic.InOut)
-              .start();
-            modelHoverOutOpacity = new TWEEN.Tween(params)
-              .to({opacity: 0,}, 200)
-              .easing(TWEEN.Easing.Cubic.Out)
-              .delay(300)
-              .start();
-        };
-        mouseOutCanvas = true;
-    } else {
-        if (mouseOutCanvas == true) {
-            TWEEN.removeAll();
-            modelOnHover = new TWEEN.Tween(params)
-              .to({cameraFov: 40, metalness: 1, roughness: 0.05}, 1000)
-              .easing(TWEEN.Easing.Cubic.InOut)
-              .start();
-            modelOnHoverOpacity = new TWEEN.Tween(params)
-              .to({opacity: 1,}, 200)
-              .easing(TWEEN.Easing.Cubic.Out)
-              .start();
-        };
-				updatePosObject();
-        lerpPosX = lerp(params.rotX, ((targetY-modelRedis.position.y)*0.1), params.timeLerp);
-        lerpPosY = lerp(params.rotY, ((targetX-modelRedis.position.x)*0.1), params.timeLerp);
-        params.rotX = lerpPosX;
-        params.rotY = lerpPosY;
-        mouseOutCanvas = false;
-    };
+  
+		updatePosObject();
+    lerpPosX = lerp(params.rotX, ((targetY-modelRedis.position.y)*0.1), params.timeLerp);
+    lerpPosY = lerp(params.rotY, ((targetX-modelRedis.position.x)*0.1), params.timeLerp);
+    params.rotX = lerpPosX;
+    params.rotY = lerpPosY;
+    mouseOutCanvas = false;
+
     modelRedis.rotation.x = params.rotX;
     modelRedis.rotation.y = params.rotY;
     modelMaterial.metalness = params.metalness;
@@ -206,9 +183,7 @@ function render() {
     renderer.render(scene, camera);
     TWEEN.update();
 
-    if (params.activateRender == true) {
-        requestAnimationFrame(render);
-    };
+    requestAnimationFrame(render);
 
 };
 
