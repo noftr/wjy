@@ -24,7 +24,7 @@ returnMainArea.addEventListener("click", function () {
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
   $(".section-tag").css("right", "6.94em");
-  $(".wrapper").css("max-width", "calc(100%-6.94em)");
+  $(".wrapper").css("max-width", "calc(100% - 6.94em)");
   setTimeout(showHide, 500);
 });
 
