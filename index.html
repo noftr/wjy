@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Tue Jun 28 2022 06:32:31 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Wed Jun 29 2022 12:30:19 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="62b03bc24bde0ed2bc658c3d" data-wf-site="62b03bc24bde0e6833658c3b">
 <head>
   <meta charset="utf-8">
@@ -21,7 +21,7 @@ body {
 /* Выключение выделения тапа на мобилке */
 * {
 -webkit-tap-highlight-color: transparent;
-}
+} 
 </style>
   <style>
 /*Временное решение из-за бага в chrome от обновления для locomotive scroll*/
@@ -40,17 +40,16 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100%;
-  position: fixed;
-  top:0;
-  left:0;
+  position: fixed; 
+  top:0; 
+  left:0; 
 }
 </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.css">
 </head>
-<body>
-  <div class="fixed-element">
-    <div class="global-style w-embed">
-      <style>
+<body class="body-red">
+  <div class="global-style w-embed">
+    <style>
 :root{
 	--red: #f20101;
   --outline-color: gray;
@@ -84,8 +83,7 @@ text-decoration-thickness: 0.15em;
 }
 .outline-text
 {
--webkit-text-stroke: 2px;
--webkit-text-stroke-color: var(--outline-color);
+-webkit-text-stroke: 2px var(--outline-color);
 color: transparent;
 }
 /*
@@ -101,8 +99,7 @@ max-width: 100%;
 }
 .outline-text
 {
--webkit-text-stroke: 1px;
--webkit-text-stroke-color: var(--outline-color);
+-webkit-text-stroke: 1px var(--outline-color);
 }
 }
 .advantage__list-item--scroll
@@ -112,8 +109,13 @@ opacity: 1;
 #featured-head-is2{
 letter-spacing: 0em;
 }
+.menu__list-item:last-child{
+margin-bottom: 0;
+}
 </style>
-    </div>
+  </div>
+  <div class="fix-scroll"></div>
+  <div id="scrollview" class="scroll-view">
     <nav class="nav">
       <div class="nav__container">
         <div class="nav__logo">
@@ -121,7 +123,7 @@ letter-spacing: 0em;
               <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9433 1H36.9709L29.752 20.2326L33.9764 31.7533L45.0126 1.20531H57L38.9105 50L33.9879 36.5751L33.9717 36.6198L28.8127 22.7349L19.1 49.7127L1 1.09662H12.372L23.8419 31.2854L27.2631 22.1708L27.978 20.185L20.9433 1ZM28.8816 17.8588L34.5934 2.64135H23.3016L28.8816 17.8588ZM23.0553 33.858L11.2316 2.73797H3.37078L19.074 44.9164L23.0553 33.858ZM34.8596 34.1621L38.919 45.2329L54.6327 2.84665H46.1731L34.8596 34.1621Z" fill="currentcolor"></path>
             </svg></div>
         </div>
-        <div>
+        <div id="nav-burger" class="nav__btn">
           <div class="nav__menu-ico w-embed"><svg width="100%" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="1" y="10" width="38" height="2" fill="currentcolor"></rect>
               <rect x="1" y="19" width="38" height="2" fill="currentcolor"></rect>
@@ -130,8 +132,6 @@ letter-spacing: 0em;
         </div>
       </div>
     </nav>
-  </div>
-  <div class="scroll-view">
     <div class="scroll-wrapper">
       <main data-scroll="auto" data-scroll-section="auto" class="scroll-container">
         <header id="hero" class="hero wf-section">
@@ -159,9 +159,18 @@ letter-spacing: 0em;
             <div id="w-node-_8de6641d-132a-805a-1c56-6e89f42abaff-bc658c3d" data-w-id="8de6641d-132a-805a-1c56-6e89f42abaff" class="hero__caption">
               <div class="grid">
                 <a id="scrollBtn" href="#scrollFrom" class="hero__down w-node-_8de6641d-132a-805a-1c56-6e89f42abb01-bc658c3d w-inline-block">
-                  <div class="ill__arrow w-embed"><svg width="100%" fill="none" viewbox="0 0 19 30">
-                      <path fill="currentcolor" d="m17.5 21-2-2-4.6 4.6V1H8.1v22.6L3.5 19l-2 2 8 8 8-8Z"></path>
-                    </svg></div>
+                  <div class="arrow-wrapper">
+                    <div class="ill__arrow w-embed"><svg width="100%" fill="none" viewbox="0 0 19 30">
+                        <path fill="currentcolor" d="m17.5 21-2-2-4.6 4.6V1H8.1v22.6L3.5 19l-2 2 8 8 8-8Z"></path>
+                      </svg></div>
+                    <div class="ill__arrow w-embed"><svg width="100%" fill="none" viewbox="0 0 19 30">
+                        <path fill="currentcolor" d="m17.5 21-2-2-4.6 4.6V1H8.1v22.6L3.5 19l-2 2 8 8 8-8Z"></path>
+                      </svg></div>
+                    <div class="ill__arrow w-embed"><svg width="100%" fill="none" viewbox="0 0 19 30">
+                        <path fill="currentcolor" d="m17.5 21-2-2-4.6 4.6V1H8.1v22.6L3.5 19l-2 2 8 8 8-8Z"></path>
+                      </svg></div>
+                  </div>
+                  <div class="btn-ellipse"></div>
                 </a>
                 <p id="w-node-_8de6641d-132a-805a-1c56-6e89f42abb03-bc658c3d" class="p-med">We are a design consultancy that specializes in <a href="#">driving</a> results with design sprints.</p>
               </div>
@@ -197,28 +206,28 @@ letter-spacing: 0em;
                 <div class="advantage__equals-line"></div>
                 <div class="advantage__equals-line"></div>
               </div>
-              <ul id="w-node-_917dec37-d605-4f9d-786c-f37d91dadb29-bc658c3d" role="list" class="advantage__list w-list-unstyled">
-                <li data-scroll="auto" data-scroll-class="advantage__list-item--scroll" data-scroll-repeat="true" class="advantage__list-item">
+              <ul id="w-node-_917dec37-d605-4f9d-786c-f37d91dadb29-bc658c3d" data-w-id="917dec37-d605-4f9d-786c-f37d91dadb29" role="list" class="advantage__list w-list-unstyled">
+                <li data-scroll="auto" data-scroll-class="advantage__list-item--scroll" data-scroll-repeat="true" data-w-id="917dec37-d605-4f9d-786c-f37d91dadb2a" class="advantage__list-item">
                   <div class="heading-s red">01</div>
                   <div class="advantage__item-line"></div>
                   <div class="p-med p-med-advantage-m">Higher sales</div>
                 </li>
-                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" class="advantage__list-item">
+                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" data-w-id="917dec37-d605-4f9d-786c-f37d91dadb30" class="advantage__list-item">
                   <div class="heading-s red">02</div>
                   <div class="advantage__item-line"></div>
                   <div class="p-med p-med-advantage-m">Improved customer experience</div>
                 </li>
-                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" class="advantage__list-item">
+                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" data-w-id="917dec37-d605-4f9d-786c-f37d91dadb36" class="advantage__list-item">
                   <div class="heading-s red">03</div>
                   <div class="advantage__item-line"></div>
                   <div class="p-med p-med-advantage-m">Stronger brand recognition and loyalty</div>
                 </li>
-                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" class="advantage__list-item">
+                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" data-w-id="917dec37-d605-4f9d-786c-f37d91dadb3c" class="advantage__list-item">
                   <div class="heading-s red">04</div>
                   <div class="advantage__item-line"></div>
                   <div class="p-med p-med-advantage-m">Better user engagement</div>
                 </li>
-                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" class="advantage__list-item">
+                <li data-scroll-class="advantage__list-item--scroll" data-scroll="auto" data-scroll-repeat="true" data-w-id="917dec37-d605-4f9d-786c-f37d91dadb42" class="advantage__list-item">
                   <div class="heading-s red">05</div>
                   <div class="advantage__item-line"></div>
                   <div class="p-med p-med-advantage-m">Stronger customer loyalty</div>
@@ -407,6 +416,25 @@ letter-spacing: 0em;
       </main>
     </div>
   </div>
+  <div id="navigation" class="menu">
+    <ul role="list" class="menu__list w-list-unstyled">
+      <li class="menu__list-item">
+        <a href="index.html" aria-current="page" class="menu__link w--current">home</a>
+      </li>
+      <li class="menu__list-item">
+        <a href="about.html" class="menu__link">About</a>
+      </li>
+      <li class="menu__list-item">
+        <a href="work.html" class="menu__link">Work</a>
+      </li>
+      <li class="menu__list-item">
+        <a href="services.html" class="menu__link">services</a>
+      </li>
+      <li class="menu__list-item">
+        <a href="contacts.html" class="menu__link">contact</a>
+      </li>
+    </ul>
+  </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=62b03bc24bde0e6833658c3b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
@@ -466,7 +494,7 @@ letter-spacing: 0em;
       },
       pinType: scrollWrapper.style.transform ? "transform" : "fixed"
     });
-		// доскролливание до нужного места на странице
+		// доскролливание до нужного места на странице 
 		// id="fixBtLeft" повесить на кнопку, а id="buyTable" повесить на место куда доскроллить
 		// текущие знаки строго соблюдать, знак решетки не удалять
    scrollBtn.addEventListener("click", () => locomotiveScroll.scrollTo("#" + "scrollFrom"));
@@ -495,10 +523,38 @@ window.addEventListener('load', ()=>{
   })
 // if (window.destroyLocomotiveScroll) window.destroyLocomotiveScroll();
 </script>
+  <!-- script>
+// ВЫЕЗЖАЮЩЕЕ МЕНЮ
+const navBtnOpen = document.getElementById('nav-burger') // кнопка бюргер в меню
+const mainContentArea = document.getElementById('scrollview') // главное окно с контентом
+const navMenuList = document.getElementById('navigation') // выезжающая навигация по сайту
+navBtnOpen.addEventListener('click', function () {
+  mainContentArea.classList.add('scroll-view--menu-open')
+  document.body.classList.add('body-red')
+  navMenuList.classList.add('menu--menu-open')
+  document.querySelector('html').classList.remove('has-scroll-scrolling') // удаляем класс со стилями скролла locomotive
+  show()
+})
+navMenuList.addEventListener('click', function () {
+  mainContentArea.classList.remove('scroll-view--menu-open')
+  document.body.classList.remove('body-red')
+  navMenuList.classList.remove('menu--menu-open')
+  setTimeout(showHide, 500)
+})
+// ДЕЛАЕМ ВЫСОТУ 100vh а второй обратно авто
+function show() {
+  mainContentArea.style.height = '100vh'
+  mainContentArea.style.overflow = 'hidden'
+}
+function showHide() {
+  mainContentArea.style.height = 'auto'
+  mainContentArea.style.overflow = 'visible'
+}
+</script -->
+  <script src="http://127.0.0.1:5500/menu.js"></script>
   <script src="http://127.0.0.1:5500/app.js"></script>
-  <script src="js/threejs.js"></script>
-  <script>
+  <!-- script>
 gsap.registerPlugin(ScrollTrigger);let scrollerPage=".scroll-wrapper";document.documentElement.clientWidth<480&&(console.log("\u0415\u0440\u0436\u0430\u043D \u0432\u0441\u0442\u0430\u0432\u0430\u0439"),scrollerPage=document.querySelector("html"),console.log(scrollerPage));const sliderProgressLine=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is1",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine2=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is2",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine3=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is3",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});sliderProgressLine.to(".data-sticky .slider-nav__line-progress",{x:"0%"}),sliderProgressLine2.to(".data-sticky .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".data-sticky .slider-nav__line-progress",{x:"0%"}),sliderProgressLine3.to(".data-sticky .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".data-sticky .slider-nav__line-progress",{x:"0%"});const tl=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is1",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl.to(".slider__is1",{opacity:"1",delay:.35,ease:"ease"},"<").to(".slide_is1-heading",{x:"3vw"},"<").to("#slide-1--anim-2",{x:"-2vw"},"<").to(".slider-heading_first.is1",{opacity:"1"},"<");const tl2=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is2",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl2.to(".slider__is2",{opacity:"1",delay:.35,ease:"ease"}).to("#slide-2--anim-1",{x:"2vw"},"<").to("#slide-2--anim-2",{x:"-3vw"},"<").to("#slide-2--anim-3",{x:"2vw"},"<").to(".slider-heading_first.is2",{opacity:"1"},"<");const tl3=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is3",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play play play reverse"}});tl3.to(".slider__is3",{opacity:"1",delay:.35,ease:"ease"}).to("#slide-3--anim-1",{x:"2vw"},"<").to("#slide-3--anim-2",{x:"-3vw"},"<").to(".slider-heading_first.is3",{opacity:"1"},"<");const slideMobileHeading=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is1",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});slideMobileHeading.to("#featured-head-is1",{"letter-spacing":"0em"});const slideMobile=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is1",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});slideMobile.to(".featured__slide-is1",{opacity:"1",delay:.35,ease:"ease"}).to(".slider-nav-featured .slider-heading_first.is1",{opacity:"1"},"<").to(".featured__image-is1",{opacity:"1"},"<");const slideWebsiteHeading=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is2",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});slideWebsiteHeading.to("#featured-head-is2",{"letter-spacing":"0.3em"});const slideWebsite=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is2",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play play play reverse"}});slideWebsite.to(".featured__slide-is2",{opacity:"1",delay:.35,ease:"ease"}).to(".slider-nav-featured .slider-heading_first.is2",{opacity:"1"},"<").to(".featured__image-is3",{opacity:"1"},"<").to(".featured__image-is2",{opacity:"1"},"<");const featuredProgressLine=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is1",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),featuredProgressLine2=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is2",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});featuredProgressLine.to(".slider-nav-featured .slider-nav__line-progress",{x:"0%"}),featuredProgressLine2.to(".slider-nav-featured .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".slider-nav-featured .slider-nav__line-progress",{x:"0%"})
-</script>
+</script -->
 </body>
 </html>
