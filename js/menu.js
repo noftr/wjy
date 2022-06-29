@@ -13,8 +13,8 @@ navBtnOpen.addEventListener("click", function () {
   document.querySelector("html").classList.remove("has-scroll-scrolling"); // удаляем класс со стилями скролла locomotive
   mainContentArea.style.overflow = "hidden";
   returnMainArea.classList.add("open-scroll--menu-open");
-  $(".section-tag").css("right", "0em"); // jquery меняю стиль всем элементам
-  $(".wrapper").css("max-width", "100%"); // jquery меняю стиль всем элементам
+  // $(".section-tag").css("right", "0em"); // jquery меняю стиль всем элементам
+  // $(".wrapper").css("max-width", "100%"); // jquery меняю стиль всем элементам
   show();
 });
 
