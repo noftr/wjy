@@ -823,12 +823,7 @@ background: var(--black);
           },
           pinType: scrollWrapper.style.transform ? "transform" : "fixed",
         });
-        // доскролливание до нужного места на странице
-        // id="fixBtLeft" повесить на кнопку, а id="buyTable" повесить на место куда доскроллить
-        // текущие знаки строго соблюдать, знак решетки не удалять
-        scrollBtn.addEventListener("click", () =>
-          locomotiveScroll.scrollTo("#" + "scrollFrom")
-        );
+
         function is_touch_enabled() {
           return (
             "ontouchstart" in window ||
@@ -856,39 +851,6 @@ background: var(--black);
       });
       // if (window.destroyLocomotiveScroll) window.destroyLocomotiveScroll();
     </script>
-    <!-- script>
-// ВЫЕЗЖАЮЩЕЕ МЕНЮ
-const navBtnOpen = document.getElementById('nav-burger') // кнопка бюргер в меню
-const mainContentArea = document.getElementById('scrollview') // главное окно с контентом
-const navMenuList = document.getElementById('navigation') // выезжающая навигация по сайту
-navBtnOpen.addEventListener('click', function () {
-  mainContentArea.classList.add('scroll-view--menu-open')
-  document.body.classList.add('body-red')
-  navMenuList.classList.add('menu--menu-open')
-  document.querySelector('html').classList.remove('has-scroll-scrolling') // удаляем класс со стилями скролла locomotive
-  show()
-})
-navMenuList.addEventListener('click', function () {
-  mainContentArea.classList.remove('scroll-view--menu-open')
-  document.body.classList.remove('body-red')
-  navMenuList.classList.remove('menu--menu-open')
-  setTimeout(showHide, 500)
-})
-// ДЕЛАЕМ ВЫСОТУ 100vh а второй обратно авто
-function show() {
-  mainContentArea.style.height = '100vh'
-  mainContentArea.style.overflow = 'hidden'
-}
-function showHide() {
-  mainContentArea.style.height = 'auto'
-  mainContentArea.style.overflow = 'visible'
-}
-</script -->
     <script src="js/menu.js"></script>
-    <script>
-      scrollBtn.addEventListener("click", () =>
-        locomotiveScroll.scrollTo("#" + "scrollFrom")
-      );
-    </script>
   </body>
 </html>
