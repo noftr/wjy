@@ -21,7 +21,7 @@ body {
 /* Выключение выделения тапа на мобилке */
 * {
 -webkit-tap-highlight-color: transparent;
-} 
+}
 </style>
   <style>
 /*Временное решение из-за бага в chrome от обновления для locomotive scroll*/
@@ -40,9 +40,9 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100%;
-  position: fixed; 
-  top:0; 
-  left:0; 
+  position: fixed;
+  top:0;
+  left:0;
 }
 </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.css">
@@ -50,69 +50,68 @@ body {
 <body class="body-red">
   <div class="global-style w-embed">
     <style>
-:root{
-	--red: #f20101;
-  --outline-color: gray;
-  --black: black;
-}
-.red{
-color: var(--red);
-}
-.wrapper
-{
-max-width: calc(100% - 6.94em);
-}
-a{
-color: inherit;
-text-underline-offset: 0.35em;
-text-decoration-thickness: 0.2em;
-}
-footer a {
-text-decoration: none;
-}
-footer .section-tag
-{
-color: white;
-}
-footer .tag-line
-{
-background-color: white;
-}
-a:hover{
-text-decoration-thickness: 0.15em;
-}
-.outline-text
-{
--webkit-text-stroke: 2px var(--outline-color);
-color: transparent;
-}
-/*
-::selection{
-color: var(--red);
-background: var(--black);
--webkit-text-stroke-color: var(--red);
-}*/
-@media screen and (max-width: 767px){
-.wrapper
-{
-max-width: 100%;
-}
-.outline-text
-{
--webkit-text-stroke: 1px var(--outline-color);
-}
-}
-.advantage__list-item--scroll
-{
-opacity: 1;
-}
-#featured-head-is2{
-letter-spacing: 0em;
-}
-.menu__list-item:last-child{
-margin-bottom: 0;
-}
-</style>
+      :root{
+      	--red: #f20101;
+        --outline-color: gray;
+        --black: black;
+      }
+      .red{
+      color: var(--red);
+      }
+      .wrapper
+      {
+      max-width: calc(100% - 6.94em);
+      }
+      a{
+      color: inherit;
+      text-underline-offset: 0.35em;
+      text-decoration-thickness: 0.2em;
+      }
+      footer a {
+      text-decoration: none;
+      }
+      footer .section-tag
+      {
+      color: white;
+      }
+      footer .tag-line
+      {
+      background-color: white;
+      }
+      a:hover{
+      text-decoration-thickness: 0.15em;
+      }
+      .outline-text
+      {
+      -webkit-text-stroke: 2px var(--outline-color);
+      color: transparent;
+      }
+      /*
+      ::selection{
+      color: var(--red);
+      background: var(--black);
+      -webkit-text-stroke-color: var(--red);
+      }*/
+      @media screen and (max-width: 767px){
+      .wrapper
+      {
+      max-width: 100%;
+      }
+      .outline-text
+      {
+      -webkit-text-stroke: 1px var(--outline-color);
+      }
+      }
+      .advantage__list-item--scroll
+      {
+      opacity: 1;
+      }
+      #featured-head-is2{
+      letter-spacing: 0em;
+      }
+      .menu__list-item:last-child{
+      margin-bottom: 0;
+      }</style>
   </div>
   <div id="open-scroll" scroll="enable" class="open-scroll"></div>
   <div id="scrollview" class="scroll-view">
@@ -454,7 +453,7 @@ margin-bottom: 0;
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/resize-sensor@0.0.6/ResizeSensor.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
-  <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
+
   <script>
   // скрипт плавного скролла
   gsap.registerPlugin(ScrollTrigger);
@@ -507,7 +506,7 @@ margin-bottom: 0;
       },
       pinType: scrollWrapper.style.transform ? "transform" : "fixed"
     });
-		// доскролливание до нужного места на странице 
+		// доскролливание до нужного места на странице
 		// id="fixBtLeft" повесить на кнопку, а id="buyTable" повесить на место куда доскроллить
 		// текущие знаки строго соблюдать, знак решетки не удалять
    scrollBtn.addEventListener("click", () => locomotiveScroll.scrollTo("#" + "scrollFrom"));
@@ -526,7 +525,7 @@ margin-bottom: 0;
     }
   }
 </script>
-  <script>
+<script>
 // использовать если для всех элементов не проставлена высота
 window.addEventListener('load', ()=>{
     const imagesWithLazyLoad = [...document.querySelectorAll("[loading='auto'], [loading='lazy']")]
@@ -536,50 +535,47 @@ window.addEventListener('load', ()=>{
   })
 // if (window.destroyLocomotiveScroll) window.destroyLocomotiveScroll();
 </script>
-  <script src="https://wjy-seven.vercel.app/js/menu.js"></script>
-  <!--  Disable Scroll Script  -->
-  <script>
+<script src="js/menu.js"></script>
+<!--  Disable Scroll Script  -->
+<script>
 var Webflow = Webflow || [];
 Webflow.push(function () {
-    var $body = $(document.body);
-    var scrollPosition = 0;
-    $('[scroll="disable"]').on('click', function () {
-        var oldWidth = $body.innerWidth();
-        scrollPosition = window.pageYOffset;
-        $body.css('overflow', 'hidden');
-        $body.css('position', 'fixed');
-        $body.css('top', `-${scrollPosition}px`);
-        $body.width(oldWidth);
-    });
-    $('[scroll="enable"]').on('click', function () {
-        if ($body.css('overflow') != 'hidden') { scrollPosition = window.pageYOffset; }
-        $body.css('overflow', '');
-        $body.css('position', '');
-        $body.css('top', '');
-        $body.width('');
-        $(window).scrollTop(scrollPosition);
-    });
-    $('[scroll="both"]').on('click', function () {
-        if ($body.css('overflow') !== 'hidden') {
-            var oldWidth = $body.innerWidth();
-            scrollPosition = window.pageYOffset;
-            $body.css('overflow', 'hidden');
-            $body.css('position', 'fixed');
-            $body.css('top', `-${scrollPosition}px`);
-            $body.width(oldWidth);
-        } else {
-            $body.css('overflow', '');
-            $body.css('position', '');
-            $body.css('top', '');
-            $body.width('');
-            $(window).scrollTop(scrollPosition);
-        }
-    });
+  var $body = $(document.body);
+  var scrollPosition = 0;
+  $('[scroll="disable"]').on('click', function () {
+      var oldWidth = $body.innerWidth();
+      scrollPosition = window.pageYOffset;
+      $body.css('overflow', 'hidden');
+      $body.css('position', 'fixed');
+      $body.css('top', `-${scrollPosition}px`);
+      $body.width(oldWidth);
+  });
+  $('[scroll="enable"]').on('click', function () {
+      if ($body.css('overflow') != 'hidden') { scrollPosition = window.pageYOffset; }
+      $body.css('overflow', '');
+      $body.css('position', '');
+      $body.css('top', '');
+      $body.width('');
+      $(window).scrollTop(scrollPosition);
+  });
+  $('[scroll="both"]').on('click', function () {
+      if ($body.css('overflow') !== 'hidden') {
+          var oldWidth = $body.innerWidth();
+          scrollPosition = window.pageYOffset;
+          $body.css('overflow', 'hidden');
+          $body.css('position', 'fixed');
+          $body.css('top', `-${scrollPosition}px`);
+          $body.width(oldWidth);
+      } else {
+          $body.css('overflow', '');
+          $body.css('position', '');
+          $body.css('top', '');
+          $body.width('');
+          $(window).scrollTop(scrollPosition);
+      }
+  });
 });
 </script>
-  <script src="https://wjy-seven.vercel.app/js/app.js"></script>
-  <!-- script>
-gsap.registerPlugin(ScrollTrigger);let scrollerPage=".scroll-wrapper";document.documentElement.clientWidth<480&&(console.log("\u0415\u0440\u0436\u0430\u043D \u0432\u0441\u0442\u0430\u0432\u0430\u0439"),scrollerPage=document.querySelector("html"),console.log(scrollerPage));const sliderProgressLine=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is1",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine2=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is2",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine3=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is3",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});sliderProgressLine.to(".data-sticky .slider-nav__line-progress",{x:"0%"}),sliderProgressLine2.to(".data-sticky .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".data-sticky .slider-nav__line-progress",{x:"0%"}),sliderProgressLine3.to(".data-sticky .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".data-sticky .slider-nav__line-progress",{x:"0%"});const tl=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is1",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl.to(".slider__is1",{opacity:"1",delay:.35,ease:"ease"},"<").to(".slide_is1-heading",{x:"3vw"},"<").to("#slide-1--anim-2",{x:"-2vw"},"<").to(".slider-heading_first.is1",{opacity:"1"},"<");const tl2=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is2",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl2.to(".slider__is2",{opacity:"1",delay:.35,ease:"ease"}).to("#slide-2--anim-1",{x:"2vw"},"<").to("#slide-2--anim-2",{x:"-3vw"},"<").to("#slide-2--anim-3",{x:"2vw"},"<").to(".slider-heading_first.is2",{opacity:"1"},"<");const tl3=gsap.timeline({scrollTrigger:{trigger:".trigger__slide-is3",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play play play reverse"}});tl3.to(".slider__is3",{opacity:"1",delay:.35,ease:"ease"}).to("#slide-3--anim-1",{x:"2vw"},"<").to("#slide-3--anim-2",{x:"-3vw"},"<").to(".slider-heading_first.is3",{opacity:"1"},"<");const slideMobileHeading=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is1",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});slideMobileHeading.to("#featured-head-is1",{"letter-spacing":"0em"});const slideMobile=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is1",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});slideMobile.to(".featured__slide-is1",{opacity:"1",delay:.35,ease:"ease"}).to(".slider-nav-featured .slider-heading_first.is1",{opacity:"1"},"<").to(".featured__image-is1",{opacity:"1"},"<");const slideWebsiteHeading=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is2",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});slideWebsiteHeading.to("#featured-head-is2",{"letter-spacing":"0.3em"});const slideWebsite=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is2",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play play play reverse"}});slideWebsite.to(".featured__slide-is2",{opacity:"1",delay:.35,ease:"ease"}).to(".slider-nav-featured .slider-heading_first.is2",{opacity:"1"},"<").to(".featured__image-is3",{opacity:"1"},"<").to(".featured__image-is2",{opacity:"1"},"<");const featuredProgressLine=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is1",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),featuredProgressLine2=gsap.timeline({scrollTrigger:{trigger:".featured__triggers-is2",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});featuredProgressLine.to(".slider-nav-featured .slider-nav__line-progress",{x:"0%"}),featuredProgressLine2.to(".slider-nav-featured .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".slider-nav-featured .slider-nav__line-progress",{x:"0%"})
-</script -->
+<script src="js/app.js"></script>
 </body>
 </html>
