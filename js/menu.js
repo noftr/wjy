@@ -5,12 +5,12 @@ const mainContentArea = document.getElementById("scrollview"); // главное
 const navMenuList = document.getElementById("navigation"); // выезжающая навигация по сайту
 
 navBtnOpen.addEventListener("click", function () {
+  window.destroyLocomotiveScroll();
   mainContentArea.classList.add("scroll-view--menu-open");
   document.body.classList.add("body-red");
   navMenuList.classList.add("menu--menu-open");
   document.querySelector("html").classList.remove("has-scroll-scrolling"); // удаляем класс со стилями скролла locomotive
   mainContentArea.style.overflow = "hidden";
-  window.destroyLocomotiveScroll();
   show();
 });
 
