@@ -1,222 +1,75 @@
-
-let scene, camera, renderer, controls, targetY, targetX;
-
-let params = {
-  cameraRange: 162.5,
-  cameraFov: 40,
-  rotX: 0,
-  rotY: 0,
-  xrangeBefore: -20,
-  xrangeTo: 10,
-  yrangeBefore: 3,
-  yrangeTo: -3,
-  timeLerp: 0.04,
-  metalness: 1,
-  roughness: 0.05,
-  envMapIntensity: 10,
-  opacity: 1,
-  activateRender: false,
-};
-
+let scene, camera, renderer, controls;
 let threejsCanvas = document.querySelector('#threejsCanvas');
 
 function getAspectRatio() {
   const {innerWidth, innerHeight} = window;
   return innerWidth / innerHeight;
-};
+}
 
 function onResize() {
   camera.aspect = getAspectRatio();
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-};
-
-let mousePos = {x:0, y:0};
-
-function handleMouseMove (event) {
-	let tx = -1 + (event.offsetX / threejsCanvas.offsetWidth)*2;
-	let ty = 1 - (event.offsetY / threejsCanvas.offsetHeight)*2;
-	mousePos = {x:tx, y:ty};
-};
-
-function updatePosObject() {
-	targetY = normalize(mousePos.y, -.95, .95, params.xrangeBefore, params.xrangeTo);
-	targetX = normalize(mousePos.x, -.95, .95, params.yrangeBefore, params.yrangeTo);
-};
-
-function lerp(start, end, t) {
-  return start * (1 - t) + end * t
-};
-
-function normalize(v,vmin,vmax,tmin, tmax) {
-	let nv = Math.max(Math.min(v,vmax), vmin);
-	let dv = vmax-vmin;
-	let pc = (nv-vmin)/dv;
-	let dt = tmax-tmin;
-	let tv = tmin + (pc*dt);
-	return tv;
-};
+}
 
 function init() {
-
-  threejsCanvas.onmouseenter = function(event) {
-      // params.activateRender = true;
-	    mouseOnCanvas = true;
-    	document.addEventListener('mousemove', handleMouseMove, false);
-      requestAnimationFrame(render);
-      // clearTimeout(deactivateRender);
-  };
-  threejsCanvas.onmouseleave = function(event) {
-      // deactivateRender = setTimeout(function() {
-      //   params.activateRender = false;
-      // }, 500)
-		  mouseOnCanvas = false;
-		  document.removeEventListener('mousemove', handleMouseMove, false);
-	};
-
-  window.addEventListener('resize', onResize);
-
   scene = new THREE.Scene();
-
-  camera = new THREE.PerspectiveCamera(params.cameraFov, getAspectRatio(), 0.1, 2500);
-  camera.position.z = params.cameraRange;
-
-  urls = [
-      "https://uploads-ssl.webflow.com/623b1bd423accac5164f330f/623f12d77d194815a4ab47c2_px.jpg",
-      "https://uploads-ssl.webflow.com/623b1bd423accac5164f330f/623f12d7359c639151bee9a8_nx.jpg",
-      "https://uploads-ssl.webflow.com/623b1bd423accac5164f330f/623f12d77d19483184ab47c3_py.jpg",
-      "https://uploads-ssl.webflow.com/623b1bd423accac5164f330f/623f12d727910d71f7547818_ny.jpg",
-      "https://uploads-ssl.webflow.com/623b1bd423accac5164f330f/623f12d7761aa73725041c01_pz.jpg",
-      "https://uploads-ssl.webflow.com/623b1bd423accac5164f330f/623f12d771fa7016b98f32c1_nz.jpg"
-  ];
-
-  textureCube = new THREE.CubeTextureLoader().load(urls);
-  textureCube.format = THREE.RGBFormat;
-
-  modelMaterial = new THREE.MeshPhysicalMaterial({
-    envMap: textureCube,
-    color: 0xffffff,
-    metalness: params.metalness,
-    roughness: params.roughness,
-    envMapIntensity: 10,
-    premultipliedAlpha: true,
-    envMapIntensity: params.envMapIntensity,
-    transparent: true,
-    opacity: params.opacity,
-  });
+  camera = new THREE.PerspectiveCamera(75, getAspectRatio(), 0.1, 1000);
+  camera.position.z = 3;
 
   renderer = new THREE.WebGLRenderer({
     canvas: threejsCanvas,
     antialias: true,
-    alpha: true,
+    alpha: false,
     stencil: true,
     depth:true,
     powerPreference:"high-performance"
   });
-  renderer.setSize(window.innerWidth/10, window.innerHeight/10);
-  renderer.setClearColor( 0x000000, 0 );
+
+  renderer = new THREE.WebGLRenderer({antialias: true});
+  renderer.setClearColor(0x222222);
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.toneMapping = THREE.CineonToneMapping;
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
 
-  function updateCamera() {
-    camera.updateProjectionMatrix();
-  };
+  controls = new THREE.OrbitControls( camera, renderer.domElement );
+  controls.autoRotate = true;
 
-	// loadOBJ();
+  const ambientLight = new THREE.AmbientLight( 0xffffff, .5 );
+  scene.add(ambientLight);
 
-};
+  const lights = [
+    new THREE.SpotLight(0x2363D0, 2, 0),
+    new THREE.SpotLight(0xCC3F4A, .6, 0),
+    new THREE.SpotLight(0x5342A0, 1, 0),
+  ];
 
+  lights[0].position.set(2, 1, 1);
+  lights[1].position.set(-2, -1, -1);
+  lights[2].position.set(-1, 1, 3);
 
+  lights.forEach(light => {
+    scene.add(light)
+    scene.add(new THREE.SpotLightHelper(light))
+  });
 
+  return new Promise((resolve, reject) => {
+    const loader = new THREE.GLTFLoader();
+    loader.crossOrigin = '';
 
-// Instantiate a loader
-const loader = new THREE.GLTFLoader();
-
-// Optional: Provide a DRACOLoader instance to decode compressed mesh data
-const dracoLoader = new THREE.DRACOLoader();
-dracoLoader.setDecoderPath( '/examples/js/libs/draco/' );
-loader.setDRACOLoader( dracoLoader );
-
-// Load a glTF resource
-loader.load( 'gltf/scene1.gltf', function ( gltf ) {
-
-		scene.add( gltf.scene );
-
-		gltf.animations; // Array<THREE.AnimationClip>
-		gltf.scene; // THREE.Group
-		gltf.scenes; // Array<THREE.Group>
-		gltf.cameras; // Array<THREE.Camera>
-		gltf.asset; // Object
-
-	},
-	// called while loading is progressing
-	function ( xhr ) {
-
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-	},
-	// called when loading has errors
-	function ( error ) {
-
-		console.log( 'An error happened' );
-
-	}
-);
-
-
-
-// const loadOBJ = function(){
-//
-// 	loader = new THREE.OBJLoader();
-// 	loader.load( 'https://raw.githubusercontent.com/noftr/three.js/main/obj-repeat-optimized-3.obj', addModelInScene);
-//
-// };
-//
-// const addModelInScene = function(object) {
-//
-// 	modelRedis = object;
-//
-// 	modelRedis.rotation.x = 0;
-// 	modelRedis.position.y = -5;
-// 	modelRedis.position.z = 0;
-//   modelRedis.scale.set(0.2,0.2,0.2)
-//   modelRedis.rotation.set(0,0,0)
-//
-// 	object.traverse( function(child) {
-// 		if ( child.isMesh ) {
-//       child.material = modelMaterial;
-//     }
-// 	});
-//
-// 	scene.add(modelRedis);
-//
-// 	render();
-// };
+    loader.load('https://static.radulescu.me/codepen/fridge/scene.gltf', gltf => {
+      scene.add(gltf.scene);
+      window.addEventListener('resize', onResize);
+      resolve();
+    }, undefined, reject);
+  });
+}
 
 function render() {
+  controls.update();
 
-		updatePosObject();
-    lerpPosX = lerp(params.rotX, ((targetY-modelRedis.position.y)*0.1), params.timeLerp);
-    lerpPosY = lerp(params.rotY, ((targetX-modelRedis.position.x)*0.1), params.timeLerp);
-    params.rotX = lerpPosX;
-    params.rotY = lerpPosY;
-
-    modelRedis.rotation.x = params.rotX;
-    modelRedis.rotation.y = params.rotY;
-
-
-    vertigoWidth = 85;
-    vertigoDistance = vertigoWidth / (2*Math.tan(THREE.MathUtils.degToRad(params.cameraFov * 0.5)));
-
-    camera.fov = params.cameraFov;
-    camera.position.z = vertigoDistance;
-    camera.updateProjectionMatrix();
-
-    renderer.render(scene, camera);
-    TWEEN.update();
-
-    requestAnimationFrame(render);
-
-};
+  renderer.render(scene, camera);
+  requestAnimationFrame(render);
+}
 
 init().then(render);
