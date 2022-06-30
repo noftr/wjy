@@ -1,7 +1,7 @@
 
-let scene, camera, renderer, controls;
+let scene, camera, renderer, controls, targetY, targetX;
 
-const params = {
+let params = {
   cameraRange: 162.5,
   cameraFov: 40,
   rotX: 0,
@@ -18,9 +18,7 @@ const params = {
   activateRender: false,
 };
 
-
-
-threejsCanvas = document.querySelector('#threejsCanvas');
+let threejsCanvas = document.querySelector('#threejsCanvas');
 
 function getAspectRatio() {
   const {innerWidth, innerHeight} = window;
@@ -33,13 +31,13 @@ function onResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 };
 
-mousePos = {x:0, y:0};
-mouseOnCanvas = false;
-mouseOutCanvas = true;
+let mousePos = {x:0, y:0};
+let mouseOnCanvas = false;
+let mouseOutCanvas = true;
 
 function handleMouseMove (event) {
-	tx = -1 + (event.offsetX / threejsCanvas.offsetWidth)*2;
-	ty = 1 - (event.offsetY / threejsCanvas.offsetHeight)*2;
+	let tx = -1 + (event.offsetX / threejsCanvas.offsetWidth)*2;
+	let ty = 1 - (event.offsetY / threejsCanvas.offsetHeight)*2;
 	mousePos = {x:tx, y:ty};
 };
 
@@ -53,27 +51,27 @@ function lerp(start, end, t) {
 };
 
 function normalize(v,vmin,vmax,tmin, tmax) {
-	nv = Math.max(Math.min(v,vmax), vmin);
-	dv = vmax-vmin;
-	pc = (nv-vmin)/dv;
-	dt = tmax-tmin;
-	tv = tmin + (pc*dt);
+	let nv = Math.max(Math.min(v,vmax), vmin);
+	let dv = vmax-vmin;
+	let pc = (nv-vmin)/dv;
+	let dt = tmax-tmin;
+	let tv = tmin + (pc*dt);
 	return tv;
 };
 
 function init() {
 
   threejsCanvas.onmouseenter = function(event) {
-      params.activateRender = true;
+      // params.activateRender = true;
 	    mouseOnCanvas = true;
     	document.addEventListener('mousemove', handleMouseMove, false);
       requestAnimationFrame(render);
-      clearTimeout(deactivateRender);
+      // clearTimeout(deactivateRender);
   };
   threejsCanvas.onmouseleave = function(event) {
-      deactivateRender = setTimeout(function() {
-        params.activateRender = false;
-      }, 500)
+      // deactivateRender = setTimeout(function() {
+      //   params.activateRender = false;
+      // }, 500)
 		  mouseOnCanvas = false;
 		  document.removeEventListener('mousemove', handleMouseMove, false);
 	};
@@ -126,9 +124,18 @@ function init() {
     camera.updateProjectionMatrix();
   };
 
+  const gltfLoader = new THREE.GLTFLoader();
+
+  gltfLoader.load("https://assets.codepen.io/22914/portal-2.glb", (gltf) => {
+    scene.add(gltf.scene);
+  });
+
 	loadOBJ();
 
 };
+
+
+
 
 const loadOBJ = function(){
 
@@ -159,7 +166,7 @@ const addModelInScene = function(object) {
 };
 
 function render() {
-  
+
 		updatePosObject();
     lerpPosX = lerp(params.rotX, ((targetY-modelRedis.position.y)*0.1), params.timeLerp);
     lerpPosY = lerp(params.rotY, ((targetX-modelRedis.position.x)*0.1), params.timeLerp);
