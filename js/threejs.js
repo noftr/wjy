@@ -32,8 +32,6 @@ function onResize() {
 };
 
 let mousePos = {x:0, y:0};
-let mouseOnCanvas = false;
-let mouseOutCanvas = true;
 
 function handleMouseMove (event) {
 	let tx = -1 + (event.offsetX / threejsCanvas.offsetWidth)*2;
@@ -124,46 +122,76 @@ function init() {
     camera.updateProjectionMatrix();
   };
 
-  const gltfLoader = new THREE.GLTFLoader();
-
-  gltfLoader.load("https://assets.codepen.io/22914/portal-2.glb", (gltf) => {
-    scene.add(gltf.scene);
-  });
-
-	loadOBJ();
+	// loadOBJ();
 
 };
 
 
 
 
-const loadOBJ = function(){
+// Instantiate a loader
+const loader = new THREE.GLTFLoader();
 
-	loader = new THREE.OBJLoader();
-	loader.load( 'https://raw.githubusercontent.com/noftr/three.js/main/obj-repeat-optimized-3.obj', addModelInScene);
+// Optional: Provide a DRACOLoader instance to decode compressed mesh data
+const dracoLoader = new THREE.DRACOLoader();
+dracoLoader.setDecoderPath( '/examples/js/libs/draco/' );
+loader.setDRACOLoader( dracoLoader );
 
-};
+// Load a glTF resource
+loader.load( 'gltf/scene1.gltf', function ( gltf ) {
 
-const addModelInScene = function(object) {
+		scene.add( gltf.scene );
 
-	modelRedis = object;
+		gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Group
+		gltf.scenes; // Array<THREE.Group>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
 
-	modelRedis.rotation.x = 0;
-	modelRedis.position.y = -5;
-	modelRedis.position.z = 0;
-  modelRedis.scale.set(0.2,0.2,0.2)
-  modelRedis.rotation.set(0,0,0)
+	},
+	// called while loading is progressing
+	function ( xhr ) {
 
-	object.traverse( function(child) {
-		if ( child.isMesh ) {
-      child.material = modelMaterial;
-    }
-	});
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
-	scene.add(modelRedis);
+	},
+	// called when loading has errors
+	function ( error ) {
 
-	render();
-};
+		console.log( 'An error happened' );
+
+	}
+);
+
+
+
+// const loadOBJ = function(){
+//
+// 	loader = new THREE.OBJLoader();
+// 	loader.load( 'https://raw.githubusercontent.com/noftr/three.js/main/obj-repeat-optimized-3.obj', addModelInScene);
+//
+// };
+//
+// const addModelInScene = function(object) {
+//
+// 	modelRedis = object;
+//
+// 	modelRedis.rotation.x = 0;
+// 	modelRedis.position.y = -5;
+// 	modelRedis.position.z = 0;
+//   modelRedis.scale.set(0.2,0.2,0.2)
+//   modelRedis.rotation.set(0,0,0)
+//
+// 	object.traverse( function(child) {
+// 		if ( child.isMesh ) {
+//       child.material = modelMaterial;
+//     }
+// 	});
+//
+// 	scene.add(modelRedis);
+//
+// 	render();
+// };
 
 function render() {
 
@@ -172,13 +200,10 @@ function render() {
     lerpPosY = lerp(params.rotY, ((targetX-modelRedis.position.x)*0.1), params.timeLerp);
     params.rotX = lerpPosX;
     params.rotY = lerpPosY;
-    mouseOutCanvas = false;
 
     modelRedis.rotation.x = params.rotX;
     modelRedis.rotation.y = params.rotY;
-    modelMaterial.metalness = params.metalness;
-    modelMaterial.roughness = params.roughness;
-    modelMaterial.opacity = params.opacity;
+
 
     vertigoWidth = 85;
     vertigoDistance = vertigoWidth / (2*Math.tan(THREE.MathUtils.degToRad(params.cameraFov * 0.5)));
