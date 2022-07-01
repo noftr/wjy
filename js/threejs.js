@@ -1,5 +1,6 @@
-let scene, camera, renderer, controls;
 let threejsCanvas = document.querySelector('#threejsCanvas');
+let scene, camera, renderer, controls;
+
 
 function getAspectRatio() {
     const {innerWidth, innerHeight} = window;
