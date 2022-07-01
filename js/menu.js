@@ -6,6 +6,7 @@ const navMenuList = document.getElementById("navigation"); // выезжающа
 const returnMainArea = document.getElementById("open-scroll");
 const mainNav = document.getElementById("main-nav");
 const menuClose = document.getElementById("menu-close");
+
 navBtnOpen.addEventListener("click", function () {
   mainNav.classList.add("nav--menu-open");
   mainContentArea.classList.add("scroll-view--menu-open");
@@ -13,18 +14,30 @@ navBtnOpen.addEventListener("click", function () {
   document.querySelector("html").classList.remove("has-scroll-scrolling"); // удаляем класс со стилями скролла locomotive
   mainContentArea.style.overflow = "hidden";
   returnMainArea.classList.add("open-scroll--menu-open");
-  // $(".section-tag").css("right", "0em"); // jquery меняю стиль всем элементам
-  // $(".wrapper").css("max-width", "100%"); // jquery меняю стиль всем элементам
+  Tags();
   show();
 });
+
+function Tags() {
+  if (window.innerWidth >= 480) {
+    $(".section-tag").css("right", "0em"); // jquery меняю стиль всем элементам
+    $(".wrapper").css("max-width", "100%"); // jquery меняю стиль всем элементам
+  }
+}
+
+function TagsClose() {
+  if (window.innerWidth >= 480) {
+    $(".section-tag").css("right", "6.94em"); // jquery меняю стиль всем элементам
+    $(".wrapper").css("max-width", "calc(100% - 6.94em)"); // jquery меняю стиль всем элементам
+  }
+}
 
 returnMainArea.addEventListener("click", function () {
   mainNav.classList.remove("nav--menu-open");
   mainContentArea.classList.remove("scroll-view--menu-open");
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
-  // $(".section-tag").css("right", "6.94em"); // jquery меняю стиль всем элементам
-  // $(".wrapper").css("max-width", "calc(100% - 6.94em)"); // jquery меняю стиль всем элементам
+  TagsClose();
   setTimeout(showHide, 500);
 });
 
@@ -33,8 +46,7 @@ menuClose.addEventListener("click", function () {
   mainContentArea.classList.remove("scroll-view--menu-open");
   navMenuList.classList.remove("menu--menu-open");
   returnMainArea.classList.remove("open-scroll--menu-open");
-  // $(".section-tag").css("right", "6.94em"); // jquery меняю стиль всем элементам
-  // $(".wrapper").css("max-width", "calc(100% - 6.94em)"); // jquery меняю стиль всем элементам
+  TagsClose();
   setTimeout(showHide, 500);
 });
 
