@@ -15,13 +15,6 @@
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <style>
-  canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 66666666666;
-    outline: none;
-  }
 
 
 
@@ -123,6 +116,10 @@ body {
       margin-bottom: 0;
       }</style>
   </div>
+
+
+
+
   <div id="open-scroll" scroll="enable" class="open-scroll"></div>
   <div id="scrollview" class="scroll-view">
     <nav id="main-nav" class="nav">
@@ -252,6 +249,8 @@ body {
             <div class="trigger__slide-is3"></div>
           </div>
           <div data-scroll-sticky="auto" data-scroll="auto" data-scroll-target="#slider" class="data-sticky">
+
+            <canvas id="canvas3d" style="position: absolute; left: 0; top: 0; width: 100% !important; height: 100% !important;"></canvas>
 
             <div class="slider-nav">
               <div class="slider-numbers">
@@ -459,12 +458,12 @@ body {
   </div>
 
 
-
+<!--
   <script src="https://static.radulescu.me/threejs/build/three.js"></script>
   <script src="https://static.radulescu.me/threejs/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://static.radulescu.me/threejs/examples/js/controls/OrbitControls.js"></script>
-  <!--<script src="js/threejs.js"></script>-->
-
+  <script src="js/threejs.js"></script>
+-->
 
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=62b03bc24bde0e6833658c3b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
@@ -473,6 +472,12 @@ body {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/resize-sensor@0.0.6/ResizeSensor.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
+      {"imports": {"@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.71/build/runtime.js"}}
+  </script>
+  <script type="module" src="js/spline.js"></script>
 
   <script>
   // скрипт плавного скролла
