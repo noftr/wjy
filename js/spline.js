@@ -9,13 +9,8 @@ app.load("https://prod.spline.design/C8v5wKSdTmx0JFF1/scene.splinecode")
 .then(() => {
     obj = app.findObjectById("908e4bcc-4410-49e2-85a6-230d2c4fcd79");
     setTimeout(animationCube, 2000);
-    setSizeCanvas();
     renderAnimation();
 });
-
-function setSizeCanvas(){
-    app.setSize(500, 500);
-};
 
 function animationCube() {
     obj.emitEvent("mouseDown");
