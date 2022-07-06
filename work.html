@@ -1,6 +1,6 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Wed Jun 29 2022 18:13:00 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="62b5bff2b7343289319e9105" data-wf-site="62b03bc24bde0e6833658c3b">
+<!--  Last Published: Wed Jul 06 2022 09:26:51 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="62c3029bc46aceaacefdf0ec" data-wf-site="62b03bc24bde0e6833658c3b">
 <head>
   <meta charset="utf-8">
   <title>Work</title>
@@ -19,6 +19,8 @@
   <style>
 body {
 	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 /* Выключение выделения тапа на мобилке */
 * {
@@ -95,11 +97,6 @@ color: var(--red);
 background: var(--black);
 -webkit-text-stroke-color: var(--red);
 }*/
-@media screen and (max-width: 767px){
-.wrapper
-{
-max-width: 100%;
-}
 /* STROKE TEXT */
 .outline-text
 {
@@ -126,6 +123,11 @@ letter-spacing: 0em;
   z-index: 4;
   content: "";
 }
+@media screen and (max-width: 479px){
+.wrapper
+{
+max-width: 100%;
+}
 </style>
   </div>
   <div id="scrollview" class="scroll-view base-color-black">
@@ -146,17 +148,17 @@ letter-spacing: 0em;
       </div>
     </nav>
     <div class="scroll-wrapper">
-      <main data-scroll="auto" data-scroll-section="auto" class="scroll-container">
+      <main data-scroll-section="auto" data-scroll="auto" class="scroll-container">
         <div class="work">
           <div class="wrapper">
             <div class="grid">
-              <div id="w-node-_2038144d-8f72-5c91-0bd5-c41cdbf34326-319e9105" class="work__heading">
+              <div id="w-node-_2038144d-8f72-5c91-0bd5-c41cdbf34326-cefdf0ec" class="work__heading">
                 <h1 class="heading-ls red">Our Works</h1>
                 <div class="work__caption">
                   <p class="p-normal-med">Since 2009 we have had the opportunity to work with some great people and some great companies - from startups to those centuries in the making. We’ve been a part of success stories across many different industries and we’re truly fans of every one of them.</p>
                 </div>
-              </div><img src="images/social_img-062.jpg" loading="lazy" id="w-node-_978065d5-302e-e486-1905-413247dcfa92-319e9105" sizes="(max-width: 479px) 10vw, 50vw" srcset="images/social_img-062-p-500.jpeg 500w, images/social_img-062.jpg 700w" alt="" class="work__video">
-              <a id="scrollBtn" href="#" class="hero__down m-hide w-node-_6871e216-832a-a4ec-49c0-4a0b794319fb-319e9105 w-inline-block">
+              </div>
+              <a id="scrollBtn" href="#scrollFrom" class="hero__down m-hide w-node-_6871e216-832a-a4ec-49c0-4a0b794319fb-cefdf0ec w-inline-block">
                 <div class="arrow-wrapper">
                   <div class="ill__arrow w-embed"><svg width="100%" fill="none" viewbox="0 0 19 30">
                       <path fill="currentcolor" d="m17.5 21-2-2-4.6 4.6V1H8.1v22.6L3.5 19l-2 2 8 8 8-8Z"></path>
@@ -170,6 +172,27 @@ letter-spacing: 0em;
                 </div>
                 <div class="btn-ellipse"></div>
               </a>
+              <div data-poster-url="videos/Instagram_1-poster-00001.jpg" data-video-urls="videos/Instagram_1-transcode.mp4,videos/Instagram_1-transcode.webm" data-autoplay="false" data-loop="true" data-wf-ignore="true" id="w-node-_58b0ced0-d1a1-4d48-ebcc-4dc3bd956620-cefdf0ec" class="work__video w-background-video w-background-video-atom"><video id="58b0ced0-d1a1-4d48-ebcc-4dc3bd956620-video" loop="" style="background-image:url(&quot;videos/Instagram_1-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                  <source src="videos/Instagram_1-transcode.mp4" data-wf-ignore="true">
+                  <source src="videos/Instagram_1-transcode.webm" data-wf-ignore="true">
+                </video><noscript>
+                  <style>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="documents/Instagram_1.mp4" alt="">
+                </noscript>
+                <div aria-live="polite"><button aria-controls="58b0ced0-d1a1-4d48-ebcc-4dc3bd956620-video" type="button" data-w-bg-video-control="true" data-w-id="58b0ced0-d1a1-4d48-ebcc-4dc3bd956621" class="w-backgroundvideo-backgroundvideoplaypausebutton work__video-play w-background-video--control"><span class="video__play-state"><img src="images/pause.svg" loading="lazy" alt="" class="video__play-pause-state-img"></span><span hidden="" class="video__pause-state"><img src="images/Polygon-4.svg" loading="lazy" alt="" class="video__play-pause-state-img"></span></button></div>
+              </div>
             </div>
           </div>
         </div>
@@ -193,7 +216,7 @@ letter-spacing: 0em;
                 <div class="brands__logo-stroke-is3"><img src="images/amex2.png" loading="lazy" alt="" class="brands__logo-img"><img src="images/nike2.png" loading="lazy" alt="" class="brands__logo-img"><img src="images/cadillac2.png" loading="lazy" alt="" class="brands__logo-img"><img src="images/marlboro2.png" loading="lazy" alt="" class="brands__logo-img"><img src="images/mcdonalds2.png" loading="lazy" alt="" class="brands__logo-img"><img src="images/gm2.png" loading="lazy" alt="" class="brands__logo-img"></div>
               </div>
             </div>
-            <a href="#" class="hero__down m-hide w-inline-block">
+            <a id="scrollBtn2" href="#scrollFrom2" class="hero__down m-hide w-inline-block">
               <div class="arrow-wrapper">
                 <div class="ill__arrow w-embed"><svg width="100%" fill="none" viewbox="0 0 19 30">
                     <path fill="currentcolor" d="m17.5 21-2-2-4.6 4.6V1H8.1v22.6L3.5 19l-2 2 8 8 8-8Z"></path>
@@ -208,11 +231,11 @@ letter-spacing: 0em;
               <div class="btn-ellipse"></div>
             </a>
           </div>
-          <div data-scroll="auto" data-scroll-direction="horizontal" data-scroll-speed="1" class="brands__big-text">
+          <div data-scroll-speed="1" data-scroll="auto" data-scroll-direction="horizontal" class="brands__big-text">
             <div class="heading-big outline-text red">brands</div>
           </div>
         </section>
-        <section class="our-projects">
+        <section id="scrollFrom2" class="our-projects">
           <div class="wrapper">
             <div class="section-contents">
               <h2 class="section-contents__heading">Our Projects</h2>
@@ -220,7 +243,7 @@ letter-spacing: 0em;
             </div>
             <div class="projects-collection w-dyn-list">
               <div role="list" class="projects-list w-dyn-items">
-                <div id="w-node-c444df8b-022b-42e8-a7a5-7d86e437c7a6-319e9105" data-w-id="c444df8b-022b-42e8-a7a5-7d86e437c7a6" role="listitem" class="projects-item w-dyn-item"><img src="" loading="lazy" alt="" class="projects-image">
+                <div id="w-node-c444df8b-022b-42e8-a7a5-7d86e437c7a6-cefdf0ec" data-w-id="c444df8b-022b-42e8-a7a5-7d86e437c7a6" role="listitem" class="projects-item w-dyn-item"><img src="" loading="lazy" alt="" class="projects-image">
                   <div class="projects-heading">
                     <h3 data-w-id="d10b3ff5-5155-ccb1-ccbc-82ce7226da45" class="projects-heading__main-text"></h3>
                     <div data-w-id="d10b3ff5-5155-ccb1-ccbc-82ce7226da46" class="projects-heading__caption">
@@ -248,10 +271,10 @@ letter-spacing: 0em;
           </div>
         </section>
         <footer id="footer" class="footer">
-          <div data-scroll="auto" data-scroll-speed="-3" data-scroll-target="#footer" class="wrapper">
+          <div data-scroll-target="#footer" data-scroll="auto" data-scroll-speed="-3" class="wrapper">
             <div class="footer__up">
               <div class="grid">
-                <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cd3-319e9105" class="footer__heading">
+                <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df16-da11df12" class="footer__heading">
                   <h2 class="heading-xxl uppercase italic">Say hi</h2>
                   <div class="footer__caption">
                     <p class="p-med">Let us get to work for you. Book a free consultation.</p>
@@ -260,21 +283,22 @@ letter-spacing: 0em;
               </div>
             </div>
             <div class="grid">
-              <a id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cda-319e9105" href="#" class="footer__email-btn w-inline-block">
+              <a id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df1d-da11df12" href="mailto:hello@wjystudios.com?subject=Hello%20WJY!" class="footer__email-btn w-inline-block">
                 <div class="ill__email w-embed"><svg width="100%" fill="none" viewbox="0 0 49 35">
                     <path fill="currentcolor" fill-rule="evenodd" d="M1 5.5a4 4 0 0 1 4-4h39a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4v-24Zm5.8-1 16 13.5a2 2 0 0 0 2.5 0L42 4.6H6.8ZM45 6 26.5 20.8a4 4 0 0 1-5 0L4 6v22.4c0 1.1.9 2 2 2h37a2 2 0 0 0 2-2V6Z" clip-rule="evenodd"></path>
                   </svg></div>
+                <div class="footer__email-ellipse"></div>
               </a>
-              <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cdc-319e9105" class="footer__email">
+              <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df20-da11df12" class="footer__email">
                 <a href="mailto:hello@wjystudios.com?subject=Hello%20WJY!" class="email__footer-text">hello@wjystudios.com</a>
               </div>
-              <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cdf-319e9105" class="footer__contact">
+              <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df23-da11df12" class="footer__contact">
                 <div class="footer__contact-heading">
                   <h3 class="heading-tiny uppercase">Office</h3>
                 </div>
                 <div class="p-tiny">208 N Green St. Chicago, Illinois, 60607</div>
               </div>
-              <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110ce5-319e9105" class="footer__contact">
+              <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df29-da11df12" class="footer__contact">
                 <div class="footer__contact-heading">
                   <h3 class="heading-tiny uppercase">Contact Us</h3>
                 </div>
@@ -285,7 +309,7 @@ letter-spacing: 0em;
               </div>
             </div>
           </div>
-          <div data-scroll="auto" data-scroll-speed="-2" data-scroll-target="#footer" class="section-tag footer--section-tag">
+          <div data-scroll-target="#footer" data-scroll="auto" data-scroll-speed="-2" class="section-tag footer--section-tag">
             <div class="heading-tag uppercase">Talk to US</div>
             <div class="tag-line"></div>
           </div>
@@ -332,7 +356,6 @@ letter-spacing: 0em;
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/resize-sensor@0.0.6/ResizeSensor.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
-  <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
   <script>
   // скрипт плавного скролла
   gsap.registerPlugin(ScrollTrigger);
@@ -359,6 +382,37 @@ letter-spacing: 0em;
         smooth: true,
       },
     });
+locomotiveScroll.on("call", (func) => {
+  switch (func) {
+    case "animation": {
+      animSocial();
+      setTimeout(animSocial2, 100);
+      setTimeout(animSocial3, 150);
+      setTimeout(animSocial4, 200);
+      setTimeout(animSocial5, 250);
+      setTimeout(animSocial6, 300);
+    }
+  }
+});
+let socialItem = document.getElementsByClassName("social__item");
+function animSocial() {
+  socialItem[0].classList.toggle("social__item--anim");
+}
+function animSocial2() {
+  socialItem[1].classList.toggle("social__item--anim");
+}
+function animSocial3() {
+  socialItem[2].classList.toggle("social__item--anim");
+}
+function animSocial4() {
+  socialItem[3].classList.toggle("social__item--anim");
+}
+function animSocial5() {
+  socialItem[4].classList.toggle("social__item--anim");
+}
+function animSocial6() {
+  socialItem[5].classList.toggle("social__item--anim");
+}
     if (is_touch_enabled() && scrollView) {
       locomotiveScroll.on('scroll', args => window.scrollTo(0, args.scroll.y));
       scrollView.classList.add('-touchable');
@@ -414,7 +468,6 @@ window.addEventListener('load', ()=>{
   })
 // if (window.destroyLocomotiveScroll) window.destroyLocomotiveScroll();
 </script>
-  <script src="https://wjy-seven.vercel.app/js/menu.js"></script>
   <!--  Disable Scroll Script  -->
   <script>
 var Webflow = Webflow || [];
@@ -456,7 +509,29 @@ Webflow.push(function () {
 });
 </script>
   <script>
-scrollBtn.addEventListener("click", () => locomotiveScroll.scrollTo("#" + "scrollFrom"));
+let bodyScroll = document.querySelector('body');
+let htmlScroll = document.querySelector('html');
+let observer = new MutationObserver(mutationRecords => {
+    if(htmlScroll.classList.contains('w-editor')) {
+        observer.disconnect();
+        let intervalEditMode = window.setInterval(editModeCallback, 1000);
+        function editModeCallback() {
+            let panelEditMode = document.querySelector('.w-reset.w-editor-bem-EditorApp_Panel');
+            if(panelEditMode) {
+                let bodyScroll = document.querySelector('body');
+                let htmlScroll = document.querySelector('html');
+                // сюда вставить изменения в едиторе какие хочешь                
+                // let cardContainer = document.querySelectorAll('.card-container.is1')[1];
+                // cardContainer.setAttribute("style", "position:relative !important;");
+      					bodyScroll.setAttribute("style", "position:relative !important; overflow:visible !important;");
+                htmlScroll.style.overflow="visible";
+                clearInterval(intervalEditMode);
+              }
+        };
+    }
+});
+observer.observe(bodyScroll, { childList: true, });
 </script>
+  <script src="https://t7cezs.csb.app/menu.js"></script>
 </body>
 </html>

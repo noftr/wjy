@@ -1,6 +1,6 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Wed Jun 29 2022 18:13:00 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="62bade592d4c5d54786a4699" data-wf-site="62b03bc24bde0e6833658c3b">
+<!--  Last Published: Wed Jul 06 2022 09:26:51 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="62c3029bc46ace2390fdf0e0" data-wf-site="62b03bc24bde0e6833658c3b">
 <head>
   <meta charset="utf-8">
   <title>About</title>
@@ -18,6 +18,8 @@
   <style>
 body {
 	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 /* Выключение выделения тапа на мобилке */
 * {
@@ -53,41 +55,37 @@ body {
   <div class="fixed-element">
     <div class="global-style w-embed">
       <style>
-:root{
-	--red: #f20101;
+:root {
+  --red: #f20101;
   --outline-color: gray;
   --black: black;
 }
-.red{
-color: var(--red);
+.red {
+  color: var(--red);
 }
-.wrapper
-{
-max-width: calc(100% - 6.94em);
+.wrapper {
+  max-width: calc(100% - 6.94em);
 }
-a{
-color: inherit;
-text-underline-offset: 0.35em;
-text-decoration-thickness: 0.2em;
+a {
+  color: inherit;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 0.2em;
 }
 footer a {
-text-decoration: none;
+  text-decoration: none;
 }
-footer .section-tag
-{
-color: white;
+footer .section-tag {
+  color: white;
 }
-footer .tag-line
-{
-background-color: white;
+footer .tag-line {
+  background-color: white;
 }
-a:hover{
-text-decoration-thickness: 0.15em;
+a:hover {
+  text-decoration-thickness: 0.15em;
 }
-.outline-text
-{
--webkit-text-stroke: 2px var(--outline-color);
-color: transparent;
+.outline-text {
+  -webkit-text-stroke: 2px var(--outline-color);
+  color: transparent;
 }
 /*
 ::selection{
@@ -95,39 +93,37 @@ color: var(--red);
 background: var(--black);
 -webkit-text-stroke-color: var(--red);
 }*/
-@media screen and (max-width: 767px){
-.wrapper
-{
-max-width: 100%;
+.advantage__list-item--scroll {
+  opacity: 1;
 }
-.outline-text
-{
--webkit-text-stroke: 1px var(--outline-color);
+#featured-head-is2 {
+  letter-spacing: 0em;
 }
+.outline-text.red {
+  -webkit-text-stroke-color: var(--red);
 }
-.advantage__list-item--scroll
-{
-opacity: 1;
-}
-#featured-head-is2{
-letter-spacing: 0em;
-}
-.outline-text.red
-{
--webkit-text-stroke-color: var(--red);
-}
-.projects__link::before{
+.projects__link::before {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 4;
-  content: "";
+  content: '';
 }
-.about__symbol
-{
--webkit-text-stroke: 2px white;
+.about__symbol {
+  -webkit-text-stroke: 2px white;
+}
+@media screen and (max-width: 479px) {
+  .wrapper {
+    max-width: 100%;
+  }
+  .outline-text {
+    -webkit-text-stroke: 1px var(--outline-color);
+  }
+.about__symbol {
+  -webkit-text-stroke: 1px white;
+}
 }
 </style>
     </div>
@@ -150,24 +146,25 @@ letter-spacing: 0em;
       </div>
     </nav>
     <div class="scroll-wrapper">
-      <main data-scroll="auto" data-scroll-section="auto" class="scroll-container">
-        <div id="about" class="about">
+      <main data-scroll-section="auto" data-scroll="auto" class="scroll-container">
+        <header id="about" class="about">
           <div class="wrapper wrapper-about">
             <div class="grid">
-              <div id="w-node-c841e14c-7ebb-1f16-87b3-20d881cac9da-786a4699" class="section-contents">
+              <div id="w-node-c841e14c-7ebb-1f16-87b3-20d881cac9da-90fdf0e0" class="section-contents">
                 <h2 class="section-contents__heading">Team</h2>
               </div>
-              <div id="w-node-_1ff41546-07db-5fde-3132-3789bac65604-786a4699" class="about__heading">
+              <div id="w-node-_1ff41546-07db-5fde-3132-3789bac65604-90fdf0e0" class="about__heading">
                 <h3 class="heading-about">Out <span class="red">Team</span></h3>
                 <div class="about__heading-caption">
                   <p class="p-normal-med">We’re a design team based in Chicago, with a distributed team of collaborators all around the world.</p>
                 </div>
               </div>
-              <div id="w-node-fe10a75d-278f-c6ef-c563-495e5c23ddef-786a4699" class="about__team">
+              <div id="w-node-fe10a75d-278f-c6ef-c563-495e5c23ddef-90fdf0e0" class="about__team">
                 <div class="about__team-card">
-                  <div class="about__image-container"><img src="images/Won2.png" loading="lazy" width="444" sizes="31vw" srcset="images/Won2-p-500.png 500w, images/Won2.png 888w" alt="" class="about__image">
+                  <div class="about__image-container">
+                    <div class="about__image-mask"><img src="images/Won2.png" loading="lazy" width="444" srcset="images/Won2-p-500.png 500w, images/Won2.png 888w" sizes="(max-width: 479px) 10vw, 31vw" alt="" class="about__image"></div>
                     <div class="about__red-cube"></div>
-                    <div data-scroll="auto" data-scroll-speed="1" data-scroll-target="#about" data-scroll-position="top" class="about__symbol">W</div>
+                    <div data-scroll-position="top" data-scroll="auto" data-scroll-speed="1" data-scroll-target="#about" class="about__symbol">W</div>
                   </div>
                   <div class="about__team-heading">
                     <div class="caption-about red">Chief Disruptor</div>
@@ -176,9 +173,10 @@ letter-spacing: 0em;
                   <p class="p-normal-med">Won is a seasoned design leader and educator who’s spent over 20 years designing and creating award-winning experiences.</p>
                 </div>
                 <div class="about__team-card">
-                  <div class="about__image-container"><img src="images/David2.png" loading="lazy" width="444" sizes="31vw" srcset="images/David2-p-500.png 500w, images/David2.png 888w" alt="" class="about__image is2">
+                  <div class="about__image-container">
+                    <div class="about__image-mask"><img src="images/David2.png" loading="lazy" width="444" srcset="images/David2-p-500.png 500w, images/David2.png 888w" sizes="(max-width: 479px) 10vw, 31vw" alt="" class="about__image is2"></div>
                     <div class="about__red-cube"></div>
-                    <div data-scroll="auto" data-scroll-speed="-1" data-scroll-target="#about" data-scroll-position="top" class="about__symbol is2">D</div>
+                    <div data-scroll-position="top" data-scroll="auto" data-scroll-speed="-1" data-scroll-target="#about" class="about__symbol is2">D</div>
                   </div>
                   <div class="about__team-heading">
                     <div class="caption-about red">CHIEF CREATIVE</div>
@@ -189,7 +187,7 @@ letter-spacing: 0em;
               </div>
             </div>
           </div>
-        </div>
+        </header>
         <section id="scrollFrom" class="brands brands-about">
           <div class="wrapper wrapper-about">
             <div class="section-contents">
@@ -213,41 +211,147 @@ letter-spacing: 0em;
               </div>
             </div>
           </div>
-          <div data-scroll="auto" data-scroll-direction="horizontal" data-scroll-speed="1" class="brands__big-text">
+          <div data-scroll-speed="1" data-scroll="auto" data-scroll-direction="horizontal" class="brands__big-text">
             <div class="heading-big outline-text red">brands</div>
           </div>
         </section>
-        <div class="skills">
+        <section id="skills" class="skills">
+          <div data-scroll-target="#skills" data-scroll-sticky="auto" data-scroll="auto" class="skills__section">
+            <div class="wrapper wrapper-about skills__wrapper">
+              <div>
+                <div class="section-contents">
+                  <h2 class="section-contents__heading">Skills</h2>
+                </div>
+                <div class="about__heading about__heading-skills">
+                  <h3 class="heading-about">Core <span class="red">Offerings</span></h3>
+                  <div class="slider-nav slider-nav-skills">
+                    <div class="slider-numbers">
+                      <div class="slider-heading_first is1">01</div>
+                      <div class="slider-heading_first is2">02</div>
+                      <div class="slider-heading_first is3">03</div>
+                      <div class="slider-heading_first is4">04</div>
+                      <div class="slider-heading_first is5">05</div>
+                      <div class="slider-heading_first is6">06</div>
+                    </div>
+                    <div class="slider-nav__line">
+                      <div class="slider-nav__line-progress"></div>
+                    </div>
+                    <div class="slider-heading_two">06</div>
+                  </div>
+                </div>
+              </div>
+              <div id="w-node-_77b8a6c0-d998-ec5b-a0a1-1963e71c2b52-90fdf0e0" class="skills__list">
+                <div class="skills__list-container">
+                  <div class="skills__item skills__item--is1">
+                    <div class="grid">
+                      <div id="w-node-_243fc07b-679d-8d43-64d0-04a78fea2ac2-90fdf0e0" class="skills__head">
+                        <div id="w-node-_243fc07b-679d-8d43-64d0-04a78fea2ac3-90fdf0e0" class="p-normal-med red">/ 01</div>
+                        <div class="skills__head-heading">
+                          <h4 id="w-node-_243fc07b-679d-8d43-64d0-04a78fea2ac6-90fdf0e0" class="heading-about">Research</h4>
+                        </div>
+                        <p id="w-node-_243fc07b-679d-8d43-64d0-04a78fea2ac8-90fdf0e0" class="p-normal-med">Every project starts with a beginner&#x27;s mindset and curiosity to understand the domain, users, and business needs.</p>
+                      </div><img src="images/about__image-052.jpg" loading="lazy" sizes="100vw" id="w-node-_7bec748f-91d5-01b0-2ede-f083f3726f61-90fdf0e0" width="762" srcset="images/about__image-052-p-500.jpeg 500w, images/about__image-052-p-800.jpeg 800w, images/about__image-052-p-1080.jpeg 1080w, images/about__image-052.jpg 1524w" alt="" class="skills__image">
+                    </div>
+                  </div>
+                  <div class="skills__item skills__item--is2">
+                    <div class="grid">
+                      <div id="w-node-_12719815-a339-3464-4e4f-fad8f4d5202a-90fdf0e0" class="skills__head">
+                        <div id="w-node-_12719815-a339-3464-4e4f-fad8f4d5202b-90fdf0e0" class="p-normal-med red">/ 02</div>
+                        <div class="skills__head-heading">
+                          <h4 id="w-node-_12719815-a339-3464-4e4f-fad8f4d5202e-90fdf0e0" class="heading-about">Strategy</h4>
+                        </div>
+                        <p id="w-node-_12719815-a339-3464-4e4f-fad8f4d52030-90fdf0e0" class="p-normal-med">Facts aren&#x27;t the same as insight, which is why synthesis and analysis is critical to identifying opportunities and defining design strategy.</p>
+                      </div><img src="images/about__image-082.jpg" loading="lazy" width="762" id="w-node-_12719815-a339-3464-4e4f-fad8f4d52032-90fdf0e0" sizes="100vw" srcset="images/about__image-082-p-500.jpeg 500w, images/about__image-082-p-800.jpeg 800w, images/about__image-082.jpg 1524w" alt="" class="skills__image">
+                    </div>
+                  </div>
+                  <div class="skills__item skills__item--is3">
+                    <div class="grid">
+                      <div id="w-node-_15651ec0-c3eb-3cd9-5a3f-ee57d223a973-90fdf0e0" class="skills__head">
+                        <div id="w-node-_15651ec0-c3eb-3cd9-5a3f-ee57d223a974-90fdf0e0" class="p-normal-med red">/ 03</div>
+                        <div class="skills__head-heading">
+                          <h4 id="w-node-_15651ec0-c3eb-3cd9-5a3f-ee57d223a977-90fdf0e0" class="heading-about">UX/UI</h4>
+                        </div>
+                        <p id="w-node-_15651ec0-c3eb-3cd9-5a3f-ee57d223a979-90fdf0e0" class="p-normal-med">User experience is more than just creating wireframes. It&#x27;s about thinking holistically about the design solution from the macro to the micro.</p>
+                      </div><img src="images/about__image-062.jpg" loading="lazy" id="w-node-_15651ec0-c3eb-3cd9-5a3f-ee57d223a97b-90fdf0e0" srcset="images/about__image-062-p-500.jpeg 500w, images/about__image-062-p-800.jpeg 800w, images/about__image-062-p-1080.jpeg 1080w, images/about__image-062.jpg 1524w" sizes="100vw" alt="" class="skills__image">
+                    </div>
+                  </div>
+                  <div class="skills__item skills__item--is4">
+                    <div class="grid">
+                      <div id="w-node-_0de52383-268c-3d43-7b87-37caab278af8-90fdf0e0" class="skills__head">
+                        <div id="w-node-_0de52383-268c-3d43-7b87-37caab278af9-90fdf0e0" class="p-normal-med red">/ 04</div>
+                        <div class="skills__head-heading">
+                          <h4 id="w-node-_0de52383-268c-3d43-7b87-37caab278afc-90fdf0e0" class="heading-about">DesignOps</h4>
+                        </div>
+                        <p id="w-node-_0de52383-268c-3d43-7b87-37caab278afe-90fdf0e0" class="p-normal-med">Facts aren&#x27;t the same as insight, which is why synthesis and analysis is critical to identifying opportunities and defining design strategy.</p>
+                      </div><img src="images/about__image-042.jpg" loading="lazy" id="w-node-_0de52383-268c-3d43-7b87-37caab278b00-90fdf0e0" srcset="images/about__image-042-p-500.jpeg 500w, images/about__image-042-p-800.jpeg 800w, images/about__image-042-p-1080.jpeg 1080w, images/about__image-042.jpg 1524w" sizes="100vw" alt="" class="skills__image">
+                    </div>
+                  </div>
+                  <div class="skills__item skills__item--is5">
+                    <div class="grid">
+                      <div id="w-node-bd69b1e8-e3d2-7c25-87d6-25e9b30e1ac6-90fdf0e0" class="skills__head">
+                        <div id="w-node-bd69b1e8-e3d2-7c25-87d6-25e9b30e1ac7-90fdf0e0" class="p-normal-med red">/ 05</div>
+                        <div class="skills__head-heading">
+                          <h4 id="w-node-bd69b1e8-e3d2-7c25-87d6-25e9b30e1aca-90fdf0e0" class="heading-about">Prototyping</h4>
+                        </div>
+                        <p id="w-node-bd69b1e8-e3d2-7c25-87d6-25e9b30e1acc-90fdf0e0" class="p-normal-med">Facts aren&#x27;t the same as insight, which is why synthesis and analysis is critical to identifying opportunities and defining design strategy.</p>
+                      </div><img src="images/about__image-032.jpg" loading="lazy" id="w-node-bd69b1e8-e3d2-7c25-87d6-25e9b30e1ace-90fdf0e0" srcset="images/about__image-032-p-500.jpeg 500w, images/about__image-032-p-800.jpeg 800w, images/about__image-032-p-1080.jpeg 1080w, images/about__image-032.jpg 1524w" sizes="100vw" alt="" class="skills__image">
+                    </div>
+                  </div>
+                  <div class="skills__item skills__item--is6">
+                    <div class="grid">
+                      <div id="w-node-fb103998-5d51-f731-d27c-8e8d46669afc-90fdf0e0" class="skills__head">
+                        <div id="w-node-fb103998-5d51-f731-d27c-8e8d46669afd-90fdf0e0" class="p-normal-med red">/ 06</div>
+                        <div class="skills__head-heading">
+                          <h4 id="w-node-fb103998-5d51-f731-d27c-8e8d46669b00-90fdf0e0" class="heading-about">Testing</h4>
+                        </div>
+                        <p id="w-node-fb103998-5d51-f731-d27c-8e8d46669b02-90fdf0e0" class="p-normal-med">Facts aren&#x27;t the same as insight, which is why synthesis and analysis is critical to identifying opportunities and defining design strategy.</p>
+                      </div><img src="images/about__image-022.jpg" loading="lazy" id="w-node-fb103998-5d51-f731-d27c-8e8d46669b04-90fdf0e0" srcset="images/about__image-022-p-500.jpeg 500w, images/about__image-022-p-800.jpeg 800w, images/about__image-022-p-1080.jpeg 1080w, images/about__image-022.jpg 1524w" sizes="100vw" alt="" class="skills__image">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="trigger">
+            <div class="trigger__skills-is1"></div>
+            <div class="trigger__skills-is2"></div>
+            <div class="trigger__skills-is3"></div>
+            <div class="trigger__skills-is4"></div>
+            <div class="trigger__skills-is5"></div>
+            <div class="trigger__skills-is6"></div>
+          </div>
+        </section>
+        <div class="reviews">
           <div class="wrapper wrapper-about">
             <div class="section-contents">
-              <h2 class="section-contents__heading">Skills</h2>
+              <h2 class="section-contents__heading">Customer Love</h2>
             </div>
-            <div class="about__heading">
-              <h3 class="heading-about">Core <span class="red">Offerings</span></h3>
-            </div>
-            <div id="w-node-_77b8a6c0-d998-ec5b-a0a1-1963e71c2b52-786a4699" class="skills__list">
-              <div class="skills__item">
-                <div class="grid">
-                  <h4 id="w-node-d6f19f6a-b356-dd03-d534-a831f6d04f39-786a4699" class="heading-about">Research</h4>
-                  <div id="w-node-_43bb252a-a09d-6820-5e69-7079c10a965d-786a4699" class="p-normal-med red">/ 01</div>
-                  <p id="w-node-f29df9c1-7f0a-4269-16d2-51b469440500-786a4699" class="p-normal-med">Every project starts with a beginner&#x27;s mindset and curiosity to understand the domain, users, and business needs.</p><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" id="w-node-_778d8882-2c72-871b-3027-e8dee4ef079c-786a4699" alt="" class="skills__image">
+            <div data-delay="4000" data-animation="outin" class="reviews__slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="true" data-disable-swipe="true" data-autoplay-limit="0" data-nav-spacing="0" data-duration="300" data-infinite="false">
+              <div class="reviews__mask w-slider-mask">
+                <div class="w-slide">
+                  <p class="reviews__heading">If you want to build a market leading product or service, Won is <span class="review__span">the best person to lead the charge.</span></p>
+                  <div class="reviews__autor"><img src="images/autor2.png" loading="lazy" width="100" alt="" class="autor__image">
+                    <p class="autor__caption">Aaron Fazulak<br>CEO, Designation</p>
+                  </div><img src="images/review__slide-image.svg" loading="lazy" alt="" class="reviews__slide-image">
+                </div>
+                <div class="w-slide">
+                  <p class="reviews__heading">WJY Studios has the rare ability to understand business concepts and fuse this with the knowledge of customer needs to develop <span class="review__span">beautifully designed prototypes that feel like real products.</span></p>
+                  <div class="reviews__autor"><img src="images/autor-22.png" loading="lazy" width="184" alt="" class="autor__image">
+                    <p class="autor__caption">KurtMerriweather<br>VP Strategy &amp; Innovation, Walk West</p>
+                  </div><img src="images/review__slide-image.svg" loading="lazy" alt="" class="reviews__slide-image">
                 </div>
               </div>
-              <div class="skills__item">
-                <div class="grid">
-                  <h4 id="w-node-_5888d67a-5b9a-0ef7-c024-1ef9a734e9bd-786a4699" class="heading-about">Research</h4>
-                  <div id="w-node-_5888d67a-5b9a-0ef7-c024-1ef9a734e9bf-786a4699" class="p-normal-med red">/ 01</div>
-                  <p id="w-node-_5888d67a-5b9a-0ef7-c024-1ef9a734e9c1-786a4699" class="p-normal-med">Every project starts with a beginner&#x27;s mindset and curiosity to understand the domain, users, and business needs.</p><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" id="w-node-_5888d67a-5b9a-0ef7-c024-1ef9a734e9c3-786a4699" alt="" class="skills__image">
-                </div>
-              </div>
+              <div class="reviews__arrow w-slider-arrow-left"><img src="images/reviews-slider-arrow.svg" loading="lazy" alt="" class="reviews__arrow-icon reviews__arrow-icon--left"></div>
+              <div class="reviews__arrow w-slider-arrow-right"><img src="images/reviews-slider-arrow.svg" loading="lazy" alt="" class="reviews__arrow-icon"></div>
+              <div class="hide w-slider-nav w-round"></div>
             </div>
           </div>
         </div>
         <footer id="footer" class="footer">
-          <div data-scroll="auto" data-scroll-speed="-3" data-scroll-target="#footer" class="wrapper">
+          <div data-scroll-target="#footer" data-scroll="auto" data-scroll-speed="-3" class="wrapper">
             <div class="footer__up">
               <div class="grid">
-                <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cd3-786a4699" class="footer__heading">
+                <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df16-da11df12" class="footer__heading">
                   <h2 class="heading-xxl uppercase italic">Say hi</h2>
                   <div class="footer__caption">
                     <p class="p-med">Let us get to work for you. Book a free consultation.</p>
@@ -256,21 +360,22 @@ letter-spacing: 0em;
               </div>
             </div>
             <div class="grid">
-              <a id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cda-786a4699" href="#" class="footer__email-btn w-inline-block">
+              <a id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df1d-da11df12" href="mailto:hello@wjystudios.com?subject=Hello%20WJY!" class="footer__email-btn w-inline-block">
                 <div class="ill__email w-embed"><svg width="100%" fill="none" viewbox="0 0 49 35">
                     <path fill="currentcolor" fill-rule="evenodd" d="M1 5.5a4 4 0 0 1 4-4h39a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4v-24Zm5.8-1 16 13.5a2 2 0 0 0 2.5 0L42 4.6H6.8ZM45 6 26.5 20.8a4 4 0 0 1-5 0L4 6v22.4c0 1.1.9 2 2 2h37a2 2 0 0 0 2-2V6Z" clip-rule="evenodd"></path>
                   </svg></div>
+                <div class="footer__email-ellipse"></div>
               </a>
-              <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cdc-786a4699" class="footer__email">
+              <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df20-da11df12" class="footer__email">
                 <a href="mailto:hello@wjystudios.com?subject=Hello%20WJY!" class="email__footer-text">hello@wjystudios.com</a>
               </div>
-              <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110cdf-786a4699" class="footer__contact">
+              <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df23-da11df12" class="footer__contact">
                 <div class="footer__contact-heading">
                   <h3 class="heading-tiny uppercase">Office</h3>
                 </div>
                 <div class="p-tiny">208 N Green St. Chicago, Illinois, 60607</div>
               </div>
-              <div id="w-node-fc2ce3d6-a87c-7dc0-b12c-8e2553110ce5-786a4699" class="footer__contact">
+              <div id="w-node-_0992e12d-44d8-a327-d6ad-2a72da11df29-da11df12" class="footer__contact">
                 <div class="footer__contact-heading">
                   <h3 class="heading-tiny uppercase">Contact Us</h3>
                 </div>
@@ -281,7 +386,7 @@ letter-spacing: 0em;
               </div>
             </div>
           </div>
-          <div data-scroll="auto" data-scroll-speed="-2" data-scroll-target="#footer" class="section-tag footer--section-tag">
+          <div data-scroll-target="#footer" data-scroll="auto" data-scroll-speed="-2" class="section-tag footer--section-tag">
             <div class="heading-tag uppercase">Talk to US</div>
             <div class="tag-line"></div>
           </div>
@@ -328,7 +433,6 @@ letter-spacing: 0em;
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/resize-sensor@0.0.6/ResizeSensor.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
-  <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
   <script>
   // скрипт плавного скролла
   gsap.registerPlugin(ScrollTrigger);
@@ -355,6 +459,37 @@ letter-spacing: 0em;
         smooth: true,
       },
     });
+locomotiveScroll.on("call", (func) => {
+  switch (func) {
+    case "animation": {
+      animSocial();
+      setTimeout(animSocial2, 100);
+      setTimeout(animSocial3, 150);
+      setTimeout(animSocial4, 200);
+      setTimeout(animSocial5, 250);
+      setTimeout(animSocial6, 300);
+    }
+  }
+});
+let socialItem = document.getElementsByClassName("social__item");
+function animSocial() {
+  socialItem[0].classList.toggle("social__item--anim");
+}
+function animSocial2() {
+  socialItem[1].classList.toggle("social__item--anim");
+}
+function animSocial3() {
+  socialItem[2].classList.toggle("social__item--anim");
+}
+function animSocial4() {
+  socialItem[3].classList.toggle("social__item--anim");
+}
+function animSocial5() {
+  socialItem[4].classList.toggle("social__item--anim");
+}
+function animSocial6() {
+  socialItem[5].classList.toggle("social__item--anim");
+}
     if (is_touch_enabled() && scrollView) {
       locomotiveScroll.on('scroll', args => window.scrollTo(0, args.scroll.y));
       scrollView.classList.add('-touchable');
@@ -410,7 +545,6 @@ window.addEventListener('load', ()=>{
   })
 // if (window.destroyLocomotiveScroll) window.destroyLocomotiveScroll();
 </script>
-  <script src="https://wjy-seven.vercel.app/js/menu.js"></script>
   <!--  Disable Scroll Script  -->
   <script>
 var Webflow = Webflow || [];
@@ -452,7 +586,33 @@ Webflow.push(function () {
 });
 </script>
   <script>
-scrollBtn.addEventListener("click", () => locomotiveScroll.scrollTo("#" + "scrollFrom"));
+let bodyScroll = document.querySelector('body');
+let htmlScroll = document.querySelector('html');
+let observer = new MutationObserver(mutationRecords => {
+    if(htmlScroll.classList.contains('w-editor')) {
+        observer.disconnect();
+        let intervalEditMode = window.setInterval(editModeCallback, 1000);
+        function editModeCallback() {
+            let panelEditMode = document.querySelector('.w-reset.w-editor-bem-EditorApp_Panel');
+            if(panelEditMode) {
+                let bodyScroll = document.querySelector('body');
+                let htmlScroll = document.querySelector('html');
+                // сюда вставить изменения в едиторе какие хочешь                
+                // let cardContainer = document.querySelectorAll('.card-container.is1')[1];
+                // cardContainer.setAttribute("style", "position:relative !important;");
+      					bodyScroll.setAttribute("style", "position:relative !important; overflow:visible !important;");
+                htmlScroll.style.overflow="visible";
+                clearInterval(intervalEditMode);
+              }
+        };
+    }
+});
+observer.observe(bodyScroll, { childList: true, });
+</script>
+  <script src="https://t7cezs.csb.app/menu.js"></script>
+  <script src="http://127.0.0.1:5500/about.js"></script>
+  <script>
+gsap.registerPlugin(ScrollTrigger);let scrollerPage=".scroll-wrapper";document.documentElement.clientWidth<480&&(scrollerPage=document.querySelector("html"));const tl=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is1",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl.to(".skills__item--is1",{opacity:"1",display:"block",delay:.2,ease:"ease"}).to(".slider-heading_first.is1",{opacity:"1"},"<");const tl2=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is2",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl2.to(".skills__item--is2",{opacity:"1",display:"block",delay:.2,ease:"ease"}).to(".slider-heading_first.is2",{opacity:"1"},"<");const tl3=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is3",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl3.to(".skills__item--is3",{opacity:"1",display:"block",delay:.2,ease:"ease"}).to(".slider-heading_first.is3",{opacity:"1"},"<");const tl4=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is4",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl4.to(".skills__item--is4",{opacity:"1",display:"block",delay:.2,ease:"ease"}).to(".slider-heading_first.is4",{opacity:"1"},"<");const tl5=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is5",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play reverse play reverse"}});tl5.to(".skills__item--is5",{opacity:"1",display:"block",delay:.2,ease:"ease"}).to(".slider-heading_first.is5",{opacity:"1"},"<");const tl6=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is6",scroller:scrollerPage,start:"top center",end:"bottom center",toggleActions:"play play play reverse"}});tl6.to(".skills__item--is6",{opacity:"1",display:"block",delay:.2,ease:"ease"}).to(".slider-heading_first.is6",{opacity:"1"},"<");const sliderProgressLine=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is1",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine2=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is2",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine3=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is3",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine4=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is4",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine5=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is5",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}}),sliderProgressLine6=gsap.timeline({scrollTrigger:{trigger:".trigger__skills-is6",scroller:scrollerPage,start:"top center",end:"bottom center",scrub:!0}});sliderProgressLine.to(".skills .slider-nav__line-progress",{x:"0%"}),sliderProgressLine2.to(".skills .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".skills .slider-nav__line-progress",{x:"0%"}),sliderProgressLine3.to(".skills .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".skills .slider-nav__line-progress",{x:"0%"}),sliderProgressLine4.to(".skills .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".skills .slider-nav__line-progress",{x:"0%"}),sliderProgressLine5.to(".skills .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".skills .slider-nav__line-progress",{x:"0%"}),sliderProgressLine6.to(".skills .slider-nav__line-progress",{x:"-100%",delay:0,duration:0}).to(".skills .slider-nav__line-progress",{x:"0%"})
 </script>
 </body>
 </html>

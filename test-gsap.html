@@ -1,6 +1,6 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Wed Jun 29 2022 18:13:00 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="62b4489c880650634163857e" data-wf-site="62b03bc24bde0e6833658c3b">
+<!--  Last Published: Wed Jul 06 2022 09:26:51 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="62c3029bc46ace99b7fdf0eb" data-wf-site="62b03bc24bde0e6833658c3b">
 <head>
   <meta charset="utf-8">
   <title>test gsap</title>
@@ -18,6 +18,8 @@
   <style>
 body {
 	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 /* Выключение выделения тапа на мобилке */
 * {
@@ -58,7 +60,6 @@ body {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/resize-sensor@0.0.6/ResizeSensor.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
-  <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
   <script>
   // скрипт плавного скролла
   gsap.registerPlugin(ScrollTrigger);
@@ -85,6 +86,37 @@ body {
         smooth: true,
       },
     });
+locomotiveScroll.on("call", (func) => {
+  switch (func) {
+    case "animation": {
+      animSocial();
+      setTimeout(animSocial2, 100);
+      setTimeout(animSocial3, 150);
+      setTimeout(animSocial4, 200);
+      setTimeout(animSocial5, 250);
+      setTimeout(animSocial6, 300);
+    }
+  }
+});
+let socialItem = document.getElementsByClassName("social__item");
+function animSocial() {
+  socialItem[0].classList.toggle("social__item--anim");
+}
+function animSocial2() {
+  socialItem[1].classList.toggle("social__item--anim");
+}
+function animSocial3() {
+  socialItem[2].classList.toggle("social__item--anim");
+}
+function animSocial4() {
+  socialItem[3].classList.toggle("social__item--anim");
+}
+function animSocial5() {
+  socialItem[4].classList.toggle("social__item--anim");
+}
+function animSocial6() {
+  socialItem[5].classList.toggle("social__item--anim");
+}
     if (is_touch_enabled() && scrollView) {
       locomotiveScroll.on('scroll', args => window.scrollTo(0, args.scroll.y));
       scrollView.classList.add('-touchable');
@@ -140,7 +172,6 @@ window.addEventListener('load', ()=>{
   })
 // if (window.destroyLocomotiveScroll) window.destroyLocomotiveScroll();
 </script>
-  <script src="https://wjy-seven.vercel.app/js/menu.js"></script>
   <!--  Disable Scroll Script  -->
   <script>
 var Webflow = Webflow || [];
@@ -181,5 +212,30 @@ Webflow.push(function () {
     });
 });
 </script>
+  <script>
+let bodyScroll = document.querySelector('body');
+let htmlScroll = document.querySelector('html');
+let observer = new MutationObserver(mutationRecords => {
+    if(htmlScroll.classList.contains('w-editor')) {
+        observer.disconnect();
+        let intervalEditMode = window.setInterval(editModeCallback, 1000);
+        function editModeCallback() {
+            let panelEditMode = document.querySelector('.w-reset.w-editor-bem-EditorApp_Panel');
+            if(panelEditMode) {
+                let bodyScroll = document.querySelector('body');
+                let htmlScroll = document.querySelector('html');
+                // сюда вставить изменения в едиторе какие хочешь                
+                // let cardContainer = document.querySelectorAll('.card-container.is1')[1];
+                // cardContainer.setAttribute("style", "position:relative !important;");
+      					bodyScroll.setAttribute("style", "position:relative !important; overflow:visible !important;");
+                htmlScroll.style.overflow="visible";
+                clearInterval(intervalEditMode);
+              }
+        };
+    }
+});
+observer.observe(bodyScroll, { childList: true, });
+</script>
+  <script src="https://t7cezs.csb.app/menu.js"></script>
 </body>
 </html>
