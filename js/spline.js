@@ -28,6 +28,7 @@ function animationSphereIn() {
     console.log("animationSphereIn")
     sphereLightGroup.emitEvent("keyDown");
     sphereGroup.emitEventReverse("keyDown");
+    camera.emitEventReverse("keyDown");
 };
 
 function animationSphereOut() {
@@ -49,6 +50,7 @@ ScrollTrigger.create({
 
 function animationTriangleIn() {
     console.log("animationTriangleIn")
+    camera.emitEvent("keyDown");
 };
 
 function animationTriangleOut() {
