@@ -1,6 +1,6 @@
 
 
-let sphereLight1, sphereLight2, sphereGroup, sphereLightGroup;
+let sphereGroup, sphereLightGroup, camera;
 
 import { Application } from "@splinetool/runtime";
 
@@ -8,10 +8,9 @@ const canvas = document.getElementById("canvas3d");
 const app = new Application(canvas);
 app.load("https://prod.spline.design/p6OqcnDa7N85sCvb/scene.splinecode")
 .then(() => {
-    // sphereLight1 = app.findObjectByName("sphereLight1");
-    // sphereLight2 = app.findObjectByName("sphereLight2");
     sphereGroup = app.findObjectByName("sphereGroup");
     sphereLightGroup = app.findObjectByName("sphereLightGroup");
+    camera = app.findObjectByName("camera");
 });
 
 ScrollTrigger.create({
@@ -35,8 +34,6 @@ function animationSphereOut() {
     console.log("animationSphereOut")
     sphereLightGroup.emitEventReverse("keyDown");
     sphereGroup.emitEvent("keyDown");
-    // sphereLight1.emitEvent("keyDown");
-    // sphereLight2.emitEvent("keyDown");
 };
 
 ScrollTrigger.create({
@@ -44,10 +41,10 @@ ScrollTrigger.create({
   scroller: scrollerPage,
   start: "top center",
   end: "bottom center",
-  // onEnter: animationSphereIn,
-  // onLeave: animationSphereOut,
-  // onEnterBack: animationSphereIn,
-  // onLeaveBack: animationSphereOut,
+  onEnter: animationTriangleIn,
+  onLeave: animationTriangleOut,
+  onEnterBack: animationTriangleIn,
+  onLeaveBack: animationTriangleOut,
 });
 
 function animationTriangleIn() {
@@ -63,10 +60,10 @@ ScrollTrigger.create({
   scroller: scrollerPage,
   start: "top center",
   end: "bottom center",
-  // onEnter: animationSphereIn,
-  // onLeave: animationSphereOut,
-  // onEnterBack: animationSphereIn,
-  // onLeaveBack: animationSphereOut
+  onEnter: animationLayersIn,
+  onLeave: animationLayersOut,
+  onEnterBack: animationLayersIn,
+  onLeaveBack: animationLayersOut
 });
 
 function animationLayersIn() {
