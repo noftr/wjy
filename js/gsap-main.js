@@ -3,9 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 let scrollerPage = ".scroll-wrapper";
 
 if (document.documentElement.clientWidth < 480) {
-  console.log("Ержан вставай");
   scrollerPage = document.querySelector("html");
-  console.log(scrollerPage);
 }
 
 // ПОЛОСКА
