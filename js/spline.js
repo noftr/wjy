@@ -23,7 +23,6 @@ ScrollTrigger.create({
   onLeave: animationSphereOut,
   onEnterBack: animationSphereIn,
   onLeaveBack: animationSphereOut,
-  markers: true,
 });
 
 function animationSphereIn() {
@@ -32,7 +31,7 @@ function animationSphereIn() {
 };
 
 function animationSphereOut() {
-    console.log("запустили 2 анимацию")
+    console.log("animationSphereOut")
     sphereLightGroup.emitEventReverse("keyDown");
 };
 
@@ -41,19 +40,18 @@ ScrollTrigger.create({
   scroller: scrollerPage,
   start: "top center",
   end: "bottom center",
-  onEnter: animationSphereIn,
-  onLeave: animationSphereOut,
-  onEnterBack: animationSphereIn,
-  onLeaveBack: animationSphereOut,
-  markers: true,
+  // onEnter: animationSphereIn,
+  // onLeave: animationSphereOut,
+  // onEnterBack: animationSphereIn,
+  // onLeaveBack: animationSphereOut,
 });
 
 function animationTriangleIn() {
-    console.log("запустили 1 анимацию")
+    console.log("animationTriangleIn")
 };
 
 function animationTriangleOut() {
-    console.log("запустили 2 анимацию")
+    console.log("animationTriangleOut")
 };
 
 ScrollTrigger.create({
@@ -61,17 +59,16 @@ ScrollTrigger.create({
   scroller: scrollerPage,
   start: "top center",
   end: "bottom center",
-  onEnter: animationSphereIn,
-  onLeave: animationSphereOut,
-  onEnterBack: animationSphereIn,
-  onLeaveBack: animationSphereOut,
-  markers: true,
+  // onEnter: animationSphereIn,
+  // onLeave: animationSphereOut,
+  // onEnterBack: animationSphereIn,
+  // onLeaveBack: animationSphereOut
 });
 
 function animationLayersIn() {
-    console.log("запустили 1 анимацию")
+    console.log("animationLayersIn")
 };
 
 function animationLayersOut() {
-    console.log("запустили 2 анимацию")
+    console.log("animationLayersOut")
 };
