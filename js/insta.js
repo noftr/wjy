@@ -33,9 +33,7 @@ function animSocial4() {
 function animSocial5() {
   socialItem[4].classList.toggle("social__item--anim");
 }
-function animSocial5() {
-  socialItem[4].classList.toggle("social__item--anim");
-}
+
 function animSocial6() {
   socialItem[5].classList.toggle("social__item--anim");
 }
