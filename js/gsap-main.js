@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// Difference
+
 let scrollerPage = ".scroll-wrapper";
 
 if (document.documentElement.clientWidth < 480) {
@@ -114,6 +116,8 @@ tl3
   .to("#slide-3--anim-1", { x: "2vw" }, "<")
   .to("#slide-3--anim-2", { x: "-3vw" }, "<")
   .to(".slider-heading_first.is3", { opacity: "1" }, "<");
+
+// ВТОРОЙ СЛАЙДЕР НА САЙТЕ
 
 // АНИМАЦИЯ СЛАЙДА МОБАЙЛ
 
