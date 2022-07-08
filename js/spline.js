@@ -11,6 +11,7 @@ app.load("https://prod.spline.design/p6OqcnDa7N85sCvb/scene.splinecode")
     sphereGroup = app.findObjectByName("sphereGroup");
     sphereLightGroup = app.findObjectByName("sphereLightGroup");
     camera = app.findObjectByName("camera");
+    // app.setSize(1920,1080);
 });
 
 ScrollTrigger.create({
