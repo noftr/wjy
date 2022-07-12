@@ -16,18 +16,19 @@ window.addEventListener('resize', scaleCanvas);
 
 
 //splinetool
-let sphereGroup, sphereLightGroup, camera;
+let allScenes, allScenesGroup;
 
 import { Application } from "@splinetool/runtime";
 
 const canvas = document.getElementById("canvas3d");
 const app = new Application(canvas);
 
-app.load("https://prod.spline.design/p6OqcnDa7N85sCvb/scene.splinecode")
+app.load("https://prod.spline.design/34ZmaCalcE3GOCZL/scene.splinecode")
 .then(() => {
-    // sphereGroup = app.findObjectByName("sphereGroup");
-    // sphereLightGroup = app.findObjectByName("sphereLightGroup");
+    allScenes = app.findObjectByName("allScenes");
+    allScenesGroup = app.findObjectByName("allScenesGroup");
 });
+
 
 
 
@@ -45,30 +46,28 @@ ScrollTrigger.create({
   start: "top center",
   end: "bottom center",
   onEnter: sphereOnEnter,
-  onLeave: sphereLeave,
   onEnterBack: sphereOnEnterBack,
   onLeaveBack: sphereLeaveBack,
+  onLeave: sphereLeave,
 });
 
 function sphereOnEnter() {
     console.log("sphereOnEnter")
-    // sphereLightGroup.emitEvent("keyDown");
-    // sphereGroup.emitEventReverse("keyDown");
 };
 
 function sphereOnEnterBack() {
     console.log("sphereOnEnterBack")
 };
 
-function sphereLeave() {
-    console.log("sphereLeave")
-    // sphereLightGroup.emitEventReverse("keyDown");
-    // sphereGroup.emitEvent("keyDown");
-};
-
 function sphereLeaveBack() {
     console.log("sphereLeaveBack")
 };
+
+function sphereLeave() {
+    console.log("sphereLeave")
+};
+
+
 
 
 
@@ -83,26 +82,30 @@ ScrollTrigger.create({
   start: "top center",
   end: "bottom center",
   onEnter: pyramidsOnEnter,
-  onLeave: pyramidsLeave,
   onEnterBack: pyramidsOnEnterBack,
   onLeaveBack: pyramidsLeaveBack,
+  onLeave: pyramidsLeave,
 });
 
 function pyramidsOnEnter() {
-    console.log("pyramidsOnEnter")
+    console.log("pyramidsOnEnter");
+    allScenes.emitEvent("keyDown");
 };
 
 function pyramidsOnEnterBack() {
     console.log("pyramidsOnEnterBack")
 };
 
-function pyramidsLeave() {
-    console.log("pyramidsLeave")
-};
-
 function pyramidsLeaveBack() {
     console.log("pyramidsLeaveBack")
+    allScenes.emitEventReverse("keyDown");
 };
+
+function pyramidsLeave() {
+    console.log("pyramidsLeave");
+};
+
+
 
 
 
@@ -117,23 +120,25 @@ ScrollTrigger.create({
   start: "top center",
   end: "bottom center",
   onEnter: platesOnEnter,
-  onLeave: platesLeave,
   onEnterBack: platesOnEnterBack,
   onLeaveBack: platesLeaveBack,
+  onLeave: platesLeave,
 });
 
 function platesOnEnter() {
-    console.log("platesOnEnter")
+    console.log("platesOnEnter");
+    allScenesGroup.emitEvent("keyDown");
 };
 
 function platesOnEnterBack() {
     console.log("platesOnEnterBack")
 };
 
-function platesLeave() {
-    console.log("platesLeave")
-};
-
 function platesLeaveBack() {
     console.log("platesLeaveBack")
+    allScenesGroup.emitEventReverse("keyDown");
+};
+
+function platesLeave() {
+    console.log("platesLeave");
 };
