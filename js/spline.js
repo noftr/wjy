@@ -9,6 +9,12 @@ scaleCanvas();
 window.addEventListener('resize', scaleCanvas);
 
 
+
+
+
+
+
+
 //splinetool
 let sphereGroup, sphereLightGroup, camera;
 
@@ -19,70 +25,115 @@ const app = new Application(canvas);
 
 app.load("https://prod.spline.design/p6OqcnDa7N85sCvb/scene.splinecode")
 .then(() => {
-    sphereGroup = app.findObjectByName("sphereGroup");
-    sphereLightGroup = app.findObjectByName("sphereLightGroup");
-    camera = app.findObjectByName("camera");
+    // sphereGroup = app.findObjectByName("sphereGroup");
+    // sphereLightGroup = app.findObjectByName("sphereLightGroup");
 });
 
+
+
+
+
+
+
+
+
+
+// animation sphere
 ScrollTrigger.create({
   trigger: ".trigger__slide-is1",
   scroller: scrollerPage,
   start: "top center",
   end: "bottom center",
-  onEnter: animationSphereIn,
-  onLeave: animationSphereOut,
-  onEnterBack: animationSphereIn,
-  onLeaveBack: animationSphereOut,
+  onEnter: sphereOnEnter,
+  onLeave: sphereLeave,
+  onEnterBack: sphereOnEnterBack,
+  onLeaveBack: sphereLeaveBack,
 });
 
-function animationSphereIn() {
-    console.log("animationSphereIn")
-    sphereLightGroup.emitEvent("keyDown");
-    sphereGroup.emitEventReverse("keyDown");
+function sphereOnEnter() {
+    console.log("sphereOnEnter")
+    // sphereLightGroup.emitEvent("keyDown");
+    // sphereGroup.emitEventReverse("keyDown");
 };
 
-function animationSphereOut() {
-    console.log("animationSphereOut")
-    sphereLightGroup.emitEventReverse("keyDown");
-    sphereGroup.emitEvent("keyDown");
+function sphereOnEnterBack() {
+    console.log("sphereOnEnterBack")
 };
 
+function sphereLeave() {
+    console.log("sphereLeave")
+    // sphereLightGroup.emitEventReverse("keyDown");
+    // sphereGroup.emitEvent("keyDown");
+};
+
+function sphereLeaveBack() {
+    console.log("sphereLeaveBack")
+};
+
+
+
+
+
+
+
+// animations pyramids
 ScrollTrigger.create({
   trigger: ".trigger__slide-is2",
   scroller: scrollerPage,
   start: "top center",
   end: "bottom center",
-  onEnter: animationTriangleIn,
-  onLeave: animationTriangleOut,
-  onEnterBack: animationTriangleIn,
-  onLeaveBack: animationTriangleOut,
+  onEnter: pyramidsOnEnter,
+  onLeave: pyramidsLeave,
+  onEnterBack: pyramidsOnEnterBack,
+  onLeaveBack: pyramidsLeaveBack,
 });
 
-function animationTriangleIn() {
-    console.log("animationTriangleIn")
-    camera.emitEvent("keyDown");
+function pyramidsOnEnter() {
+    console.log("pyramidsOnEnter")
 };
 
-function animationTriangleOut() {
-    console.log("animationTriangleOut")
-    camera.emitEventReverse("keyDown");
+function pyramidsOnEnterBack() {
+    console.log("pyramidsOnEnterBack")
 };
 
+function pyramidsLeave() {
+    console.log("pyramidsLeave")
+};
+
+function pyramidsLeaveBack() {
+    console.log("pyramidsLeaveBack")
+};
+
+
+
+
+
+
+
+// animations plates
 ScrollTrigger.create({
   trigger: ".trigger__slide-is3",
   scroller: scrollerPage,
   start: "top center",
   end: "bottom center",
-  onEnter: animationLayersIn,
-  onLeave: animationLayersOut,
-  onEnterBack: animationLayersIn,
-  onLeaveBack: animationLayersOut
+  onEnter: platesOnEnter,
+  onLeave: platesLeave,
+  onEnterBack: platesOnEnterBack,
+  onLeaveBack: platesLeaveBack,
 });
 
-function animationLayersIn() {
-    console.log("animationLayersIn")
+function platesOnEnter() {
+    console.log("platesOnEnter")
 };
 
-function animationLayersOut() {
-    console.log("animationLayersOut")
+function platesOnEnterBack() {
+    console.log("platesOnEnterBack")
+};
+
+function platesLeave() {
+    console.log("platesLeave")
+};
+
+function platesLeaveBack() {
+    console.log("platesLeaveBack")
 };
