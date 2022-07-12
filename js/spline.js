@@ -1,17 +1,27 @@
+//fluid responsive for splinetool
+let splineCanvas = document.querySelector("#canvas3d")
+let numScale;
+function scaleCanvas() {
+		numScale = window.innerWidth / 1920;
+		splineCanvas.style.transform = "scale3d("+numScale+", "+numScale+", 1)";
+};
+scaleCanvas();
+window.addEventListener('resize', scaleCanvas);
 
 
+//splinetool
 let sphereGroup, sphereLightGroup, camera;
 
 import { Application } from "@splinetool/runtime";
 
 const canvas = document.getElementById("canvas3d");
 const app = new Application(canvas);
+
 app.load("https://prod.spline.design/p6OqcnDa7N85sCvb/scene.splinecode")
 .then(() => {
     sphereGroup = app.findObjectByName("sphereGroup");
     sphereLightGroup = app.findObjectByName("sphereLightGroup");
     camera = app.findObjectByName("camera");
-    // app.setSize(1920,1080);
 });
 
 ScrollTrigger.create({
