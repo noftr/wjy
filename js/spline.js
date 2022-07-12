@@ -117,9 +117,10 @@ ScrollTrigger.create({
 
 function pyramidsOnEnter() {
     console.log("pyramidsOnEnter");
-    allScenes.emitEvent("keyDown");
 
 		setTimeout(() => {
+		    allScenes.emitEvent("keyDown");
+
 				pyramidDirectLight.emitEvent("keyDown");
 				pyramidPointLight.emitEvent("keyDown");
 				pyramid1.emitEvent("keyDown");
@@ -150,7 +151,9 @@ function pyramidsOnEnterBack() {
 
 function pyramidsLeaveBack() {
     console.log("pyramidsLeaveBack")
-    allScenes.emitEventReverse("keyDown");
+		setTimeout(() => {
+    		allScenes.emitEventReverse("keyDown");
+		}, 1650);
 
 		pyramidDirectLight.emitEventReverse("keyDown");
 		pyramidPointLight.emitEventReverse("keyDown");
