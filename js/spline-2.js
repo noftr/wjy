@@ -8,24 +8,10 @@ function scaleCanvas() {
 scaleCanvas();
 window.addEventListener('resize', scaleCanvas);
 
-
-
-
-
-
-//allScenes
 let allScenes, allScenesGroup;
-//sphere
 let sphereLightGroup, sphereGroup;
-//pyramids
 let pyramidPointLight, pyramid1, pyramid2, pyramid3, mlp, desirable, viable, feasible;
-//plates
 let sliceLight, groupSlice;
-
-
-
-
-
 
 import { Application } from "@splinetool/runtime";
 
@@ -285,7 +271,6 @@ function startAnimationScenes() {
 		requestAnimationFrame(startAnimationScenes);
 };
 
-
 function in1() {
 		sphereLightGroup.emitEvent("keyDown");
 		sphereGroup.emitEventReverse("keyDown");
@@ -331,13 +316,6 @@ function out3() {
 		groupSlice.emitEventReverse("keyDown");
 }
 
-
-
-
-
-
-
-// animation sphere
 ScrollTrigger.create({
 	  trigger: ".trigger__slide-is1",
 	  scroller: scrollerPage,
@@ -366,7 +344,6 @@ ScrollTrigger.create({
 	  onEnterBack: setTrigger3,
 	  onLeave: setTrigger0,
 });
-
 
 function setTrigger0() {
 		whereTriggerActive = 0;
