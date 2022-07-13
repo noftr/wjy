@@ -16,14 +16,15 @@ window.addEventListener('resize', scaleCanvas);
 
 
 //splinetool
-let allScenes, allScenesGroup, sphereLightGroup, sphereGroup, pyramidDirectLight, pyramidPointLight, pyramid1, pyramid2, pyramid3, mlp, desirable, viable, feasible;
+let allScenes, allScenesGroup, sphereLightGroup, sphereGroup, pyramidPointLight, pyramid1, pyramid2, pyramid3, mlp, desirable, viable, feasible;
+let timerPyramidsOnEnter, timerPyramidsOnEnterBack;
 
 import { Application } from "@splinetool/runtime";
 
 const canvas = document.getElementById("canvas3d");
 const app = new Application(canvas);
 
-app.load("https://prod.spline.design/3TnfTwG6g5sCPzGA/scene.splinecode")
+app.load('https://prod.spline.design/2ofCLegPKjR2TqqZ/scene.splinecode')
 .then(() => {
 		app.setSize(1920, 1440);
 
@@ -36,7 +37,6 @@ app.load("https://prod.spline.design/3TnfTwG6g5sCPzGA/scene.splinecode")
     sphereGroup = app.findObjectByName("sphereGroup");
 
 		// pyramids animations
-		pyramidDirectLight = app.findObjectByName("pyramidDirectLight");
 		pyramidPointLight = app.findObjectByName("pyramidPointLight");
 		pyramid1 = app.findObjectByName("pyramid1");
 		pyramid2 = app.findObjectByName("pyramid2");
@@ -79,7 +79,7 @@ function sphereOnEnterBack() {
 		sphereGroup.emitEventReverse("keyDown");
 		setTimeout(() => {
 				sphereLightGroup.emitEvent("keyDown");
-		}, 1000);
+		}, 1100);
     console.log("sphereOnEnterBack")
 };
 
@@ -118,10 +118,8 @@ ScrollTrigger.create({
 function pyramidsOnEnter() {
     console.log("pyramidsOnEnter");
 
-		setTimeout(() => {
+		timerPyramidsOnEnter = setTimeout(() => {
 		    allScenes.emitEvent("keyDown");
-
-				pyramidDirectLight.emitEvent("keyDown");
 				pyramidPointLight.emitEvent("keyDown");
 				pyramid1.emitEvent("keyDown");
 				pyramid2.emitEvent("keyDown");
@@ -130,14 +128,13 @@ function pyramidsOnEnter() {
 				desirable.emitEvent("keyDown");
 				viable.emitEvent("keyDown");
 				feasible.emitEvent("keyDown");
-		}, 1000);
+		}, 1100);
 };
 
 function pyramidsOnEnterBack() {
-    console.log("pyramidsOnEnterBack")
+    console.log("pyramidsOnEnterBack");
 
-		setTimeout(() => {
-				pyramidDirectLight.emitEvent("keyDown");
+		timerPyramidsOnEnterBack = setTimeout(() => {
 				pyramidPointLight.emitEvent("keyDown");
 				pyramid1.emitEvent("keyDown");
 				pyramid2.emitEvent("keyDown");
@@ -146,7 +143,7 @@ function pyramidsOnEnterBack() {
 				desirable.emitEvent("keyDown");
 				viable.emitEvent("keyDown");
 				feasible.emitEvent("keyDown");
-		}, 1000);
+		}, 1100);
 };
 
 function pyramidsLeaveBack() {
@@ -155,7 +152,6 @@ function pyramidsLeaveBack() {
     		allScenes.emitEventReverse("keyDown");
 		}, 1650);
 
-		pyramidDirectLight.emitEventReverse("keyDown");
 		pyramidPointLight.emitEventReverse("keyDown");
 		pyramid1.emitEventReverse("keyDown");
 		pyramid2.emitEventReverse("keyDown");
@@ -164,12 +160,14 @@ function pyramidsLeaveBack() {
 		desirable.emitEventReverse("keyDown");
 		viable.emitEventReverse("keyDown");
 		feasible.emitEventReverse("keyDown");
+
+		clearTimeout(timerPyramidsOnEnterBack);
+		clearTimeout(timerPyramidsOnEnter);
 };
 
 function pyramidsLeave() {
     console.log("pyramidsLeave");
 
-		pyramidDirectLight.emitEventReverse("keyDown");
 		pyramidPointLight.emitEventReverse("keyDown");
 		pyramid1.emitEventReverse("keyDown");
 		pyramid2.emitEventReverse("keyDown");
@@ -178,6 +176,9 @@ function pyramidsLeave() {
 		desirable.emitEventReverse("keyDown");
 		viable.emitEventReverse("keyDown");
 		feasible.emitEventReverse("keyDown");
+
+		clearTimeout(timerPyramidsOnEnterBack);
+		clearTimeout(timerPyramidsOnEnter);
 };
 
 
@@ -211,7 +212,9 @@ function platesOnEnterBack() {
 
 function platesLeaveBack() {
     console.log("platesLeaveBack")
-    allScenesGroup.emitEventReverse("keyDown");
+		setTimeout(() => {
+				allScenesGroup.emitEventReverse("keyDown");
+		}, 1650);
 };
 
 function platesLeave() {
