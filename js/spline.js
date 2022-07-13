@@ -21,11 +21,8 @@ let sphereLightGroup, sphereGroup;
 let pyramidPointLight, pyramid1, pyramid2, pyramid3, mlp, desirable, viable, feasible;
 //plates
 
-//list of setTimeout
-let timerPyramidsOnEnter, timerPyramidsOnEnterBack, timerPyramidsLeaveBack, timerPlatesLeaveBack;
 
-//fix bug on hover
-// let canvasContainer = querySelector('.canvas-container');
+
 
 
 
@@ -88,13 +85,11 @@ function sphereOnEnter() {
 };
 
 function sphereOnEnterBack() {
-		sphereGroup.emitEventReverse("keyDown");
 		setTimeout(() => {
+				sphereGroup.emitEventReverse("keyDown");
 				sphereLightGroup.emitEvent("keyDown");
 		}, 1100);
     console.log("sphereOnEnterBack")
-		// clearTimeout(timerPyramidsOnEnterBack);
-		// clearTimeout(timerPyramidsOnEnter);
 };
 
 function sphereLeaveBack() {
@@ -134,11 +129,13 @@ function pyramidsOnEnter() {
 		document.querySelector('.canvas-container').style.width = "2px"
 
     console.log("pyramidsOnEnter");
-		timerPyramidsOnEnter = setTimeout(() => {
-				// clearTimeout(timerPyramidsLeaveBack);
+		setTimeout(() => {
 		    allScenes.emitEvent("keyDown");
 
-				pyramidPointLight.emitEvent("keyDown");
+				setTimeout(() => {
+						pyramidPointLight.emitEvent("keyDown");
+				}, 1000);
+
 				pyramid1.emitEvent("keyDown");
 				pyramid2.emitEvent("keyDown");
 				pyramid3.emitEvent("keyDown");
@@ -152,8 +149,10 @@ function pyramidsOnEnter() {
 function pyramidsOnEnterBack() {
     console.log("pyramidsOnEnterBack");
 
-		timerPyramidsOnEnterBack = setTimeout(() => {
-				pyramidPointLight.emitEvent("keyDown");
+		setTimeout(() => {
+				setTimeout(() => {
+						pyramidPointLight.emitEvent("keyDown");
+				}, 1000);
 				pyramid1.emitEvent("keyDown");
 				pyramid2.emitEvent("keyDown");
 				pyramid3.emitEvent("keyDown");
@@ -165,11 +164,9 @@ function pyramidsOnEnterBack() {
 };
 
 function pyramidsLeaveBack() {
-		// clearTimeout(timerPyramidsOnEnterBack);
-		// clearTimeout(timerPyramidsOnEnter);
 
     console.log("pyramidsLeaveBack")
-		timerPyramidsLeaveBack = setTimeout(() => {
+		setTimeout(() => {
     		allScenes.emitEventReverse("keyDown");
 		}, 1650);
 
@@ -184,8 +181,6 @@ function pyramidsLeaveBack() {
 };
 
 function pyramidsLeave() {
-		// clearTimeout(timerPyramidsOnEnterBack);
-		// clearTimeout(timerPyramidsOnEnter);
 
     console.log("pyramidsLeave");
 
@@ -220,7 +215,6 @@ ScrollTrigger.create({
 });
 
 function platesOnEnter() {
-		// clearTimeout(timerPlatesLeaveBack);
     allScenesGroup.emitEvent("keyDown");
     console.log("platesOnEnter");
 };
@@ -231,7 +225,7 @@ function platesOnEnterBack() {
 
 function platesLeaveBack() {
     console.log("platesLeaveBack");
-		timerPlatesLeaveBack = setTimeout(() => {
+		setTimeout(() => {
 				allScenesGroup.emitEventReverse("keyDown");
 		}, 1650);
 };
