@@ -66,6 +66,14 @@ app.load('https://prod.spline.design/2ofCLegPKjR2TqqZ/scene.splinecode')
 
 
 
+
+
+
+
+
+
+
+
 // animation sphere
 ScrollTrigger.create({
 	  trigger: ".trigger__slide-is1",
