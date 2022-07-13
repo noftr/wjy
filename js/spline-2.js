@@ -57,11 +57,59 @@ app.load('https://prod.spline.design/2ofCLegPKjR2TqqZ/scene.splinecode')
 		// slices animations
 		sliceLight = app.findObjectByName("sliceLight");
 		groupSlice = app.findObjectByName("groupSlice");
+
+		app.addEventListener('mouseHover', (e) => {
+				if (e.target.name === 'plane1') {
+						hoverPlane1();
+				}
+		});
+		app.addEventListener('mouseHover', (e) => {
+				if (e.target.name === 'plane2') {
+						hoverPlane2();
+				}
+		});
+		app.addEventListener('mouseHover', (e) => {
+				if (e.target.name === 'plane3') {
+						hoverPlane3();
+				}
+		});
+		app.addEventListener('mouseHover', (e) => {
+				if (e.target.name === 'plane4') {
+						hoverPlane4();
+				}
+		});
+		app.addEventListener('mouseHover', (e) => {
+				if (e.target.name === 'plane5') {
+						hoverPlane5();
+				}
+		});
+		app.addEventListener('mouseHover', (e) => {
+				if (e.target.name === 'hoverOutTrigger') {
+						hoverPlaneOutAll();
+				}
+		});
+
 });
 
 
+function hoverPlane1() {
 
+};
+function hoverPlane2() {
 
+};
+function hoverPlane3() {
+
+};
+function hoverPlane4() {
+
+};
+function hoverPlane5() {
+
+};
+function hoverPlaneOutAll() {
+
+};
 
 
 
