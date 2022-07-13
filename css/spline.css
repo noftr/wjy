@@ -21,3 +21,15 @@
   height: 2px;
   background-color: hsla(0, 100.00%, 50.00%, 1.00);
 }
+
+.slider__is1 {
+  pointer-events: none;
+}
+
+.slider__is2 {
+  pointer-events: none;
+}
+
+.slider__is3 {
+  pointer-events: none;
+}
