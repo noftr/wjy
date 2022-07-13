@@ -20,7 +20,7 @@ let sphereLightGroup, sphereGroup;
 //pyramids
 let pyramidPointLight, pyramid1, pyramid2, pyramid3, mlp, desirable, viable, feasible;
 //plates
-
+let sliceLight, groupSlice;
 
 
 
@@ -53,6 +53,10 @@ app.load('https://prod.spline.design/2ofCLegPKjR2TqqZ/scene.splinecode')
 		desirable = app.findObjectByName("Desirable");
 		viable = app.findObjectByName("Viable");
 		feasible = app.findObjectByName("Feasible");
+
+		// slices animations
+		sliceLight = app.findObjectByName("sliceLight");
+		groupSlice = app.findObjectByName("groupSlice");
 });
 
 
@@ -81,7 +85,7 @@ function startAnimationScenes() {
 												setTimeout(() => {
 														pastTrigger = 0;
 														playAnimation = false;
-												}, 3000);
+												}, 1000);
 												break
 
 										case 2:
@@ -91,7 +95,7 @@ function startAnimationScenes() {
 												setTimeout(() => {
 														pastTrigger = 0;
 														playAnimation = false;
-												}, 3000);
+												}, 1000);
 												break
 
 										case 3:
@@ -102,7 +106,7 @@ function startAnimationScenes() {
 												setTimeout(() => {
 														pastTrigger = 0;
 														playAnimation = false;
-												}, 3000);
+												}, 1000);
 												break
 								};
 								break
@@ -115,7 +119,7 @@ function startAnimationScenes() {
 												setTimeout(() => {
 														pastTrigger = 1;
 														playAnimation = false;
-												}, 3000);
+												}, 2000);
 												break
 
 										case 2:
@@ -127,8 +131,8 @@ function startAnimationScenes() {
 														setTimeout(() => {
 																pastTrigger = 1;
 																playAnimation = false;
-														}, 3000);
-												}, 3000);
+														}, 2000);
+												}, 1000);
 												break
 
 										case 3:
@@ -141,8 +145,8 @@ function startAnimationScenes() {
 														setTimeout(() => {
 																pastTrigger = 1;
 																playAnimation = false;
-														}, 3000);
-												}, 3000);
+														}, 2000);
+												}, 1000);
 												break
 								};
 								break
@@ -156,7 +160,7 @@ function startAnimationScenes() {
 												setTimeout(() => {
 														pastTrigger = 2;
 														playAnimation = false;
-												}, 3000);
+												}, 2000);
 												break
 
 										case 1:
@@ -168,8 +172,8 @@ function startAnimationScenes() {
 														setTimeout(() => {
 																pastTrigger = 2;
 																playAnimation = false;
-														}, 3000);
-												}, 3000);
+														}, 2000);
+												}, 1000);
 												break
 
 										case 3:
@@ -181,8 +185,8 @@ function startAnimationScenes() {
 														setTimeout(() => {
 																pastTrigger = 2;
 																playAnimation = false;
-														}, 3000);
-												}, 3000);
+														}, 2000);
+												}, 1000);
 												break
 								};
 								break
@@ -197,7 +201,7 @@ function startAnimationScenes() {
 												setTimeout(() => {
 														pastTrigger = 3;
 														playAnimation = false;
-												}, 3000);
+												}, 1500);
 												break
 
 										case 1:
@@ -210,8 +214,8 @@ function startAnimationScenes() {
 														setTimeout(() => {
 																pastTrigger = 3;
 																playAnimation = false;
-														}, 3000);
-												}, 3000);
+														}, 1500);
+												}, 1000);
 												break
 
 										case 2:
@@ -223,8 +227,8 @@ function startAnimationScenes() {
 														setTimeout(() => {
 																pastTrigger = 3;
 																playAnimation = false;
-														}, 3000);
-												}, 3000);
+														}, 1500);
+												}, 1000);
 												break
 								};
 								break
@@ -237,13 +241,11 @@ function startAnimationScenes() {
 function in1() {
 		sphereLightGroup.emitEvent("keyDown");
 		sphereGroup.emitEventReverse("keyDown");
-		console.log("in1")
 };
 
 function out1() {
 		sphereLightGroup.emitEventReverse("keyDown");
 		sphereGroup.emitEvent("keyDown");
-		console.log("out1")
 }
 
 function in2() {
@@ -257,7 +259,6 @@ function in2() {
 		desirable.emitEvent("keyDown");
 		viable.emitEvent("keyDown");
 		feasible.emitEvent("keyDown");
-		console.log("in2")
 };
 
 function out2() {
@@ -269,16 +270,17 @@ function out2() {
 		desirable.emitEventReverse("keyDown");
 		viable.emitEventReverse("keyDown");
 		feasible.emitEventReverse("keyDown");
-		console.log("out2")
 }
 
 function in3() {
 		document.querySelector('.canvas-container').style.width = "2px"
-		console.log("in3")
+		sliceLight.emitEvent("keyDown");
+		groupSlice.emitEvent("keyDown");
 };
 
 function out3() {
-		console.log("out3")
+		sliceLight.emitEventReverse("keyDown");
+		groupSlice.emitEventReverse("keyDown");
 }
 
 
