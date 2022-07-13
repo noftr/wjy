@@ -1,9 +1,9 @@
 #canvas3d {
     position: absolute;
-    left: -959px;
-    top: -718px;
-    right: -959px;
-    bottom: -718px;
+    left: -958px;
+    top: -717px;
+    right: -958px;
+    bottom: -717px;
 }
 
 .canvas-wrapper {
@@ -17,8 +17,8 @@
 
 .canvas-container {
   position: relative;
-  width: 2px;
-  height: 2px;
+  width: 4px;
+  height: 4px;
   background-color: hsla(0, 100.00%, 50.00%, 1.00);
 }
 

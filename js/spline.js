@@ -22,8 +22,10 @@ let pyramidPointLight, pyramid1, pyramid2, pyramid3, mlp, desirable, viable, fea
 //plates
 
 //list of setTimeout
-// let timerPyramidsOnEnter, timerPyramidsOnEnterBack, timerPyramidsLeaveBack, timerPlatesLeaveBack;
+let timerPyramidsOnEnter, timerPyramidsOnEnterBack, timerPyramidsLeaveBack, timerPlatesLeaveBack;
 
+//fix bug on hover
+// let canvasContainer = querySelector('.canvas-container');
 
 
 
@@ -128,8 +130,10 @@ ScrollTrigger.create({
 });
 
 function pyramidsOnEnter() {
-    console.log("pyramidsOnEnter");
+		//fix bug with hover
+		document.querySelector('.canvas-container').style.width = "2px"
 
+    console.log("pyramidsOnEnter");
 		timerPyramidsOnEnter = setTimeout(() => {
 				// clearTimeout(timerPyramidsLeaveBack);
 		    allScenes.emitEvent("keyDown");
