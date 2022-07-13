@@ -77,7 +77,6 @@ app.load('https://prod.spline.design/2ofCLegPKjR2TqqZ/scene.splinecode')
 
 });
 
-
 function hoverPlane1() {
 		document.querySelector('.tooltip1').style.opacity = "1";
 		document.querySelector('.tooltip2').style.opacity = "0";
@@ -120,11 +119,6 @@ function hoverPlaneOutAll() {
 		document.querySelector('.tooltip4').style.opacity = "0";
 		document.querySelector('.tooltip5').style.opacity = "0";
 };
-
-
-
-
-
 
 let whereTriggerActive = 0;
 let pastTrigger = 0;
