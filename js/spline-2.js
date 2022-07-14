@@ -1,4 +1,4 @@
-if (document.documentElement.clientWidth > 480) {
+if (document.documentElement.clientWidth < 480) {
   //fluid responsive for splinetool
   let splineCanvas = document.querySelector("#canvas3d");
   let numScale;
