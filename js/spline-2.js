@@ -27,7 +27,6 @@ const canvas = document.getElementById("canvas3d");
 const app = new Application(canvas);
 
 app
-  // .load("https://prod.spline.design/2ofCLegPKjR2TqqZ/scene.splinecode")
   .load("https://prod.spline.design/2ofCLegPKjR2TqqZ/scene.splinecode")
   .then(() => {
     app.setSize(1920, 1440);
